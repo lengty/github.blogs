@@ -1,0 +1,1678 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/favicon.png?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="1.基本数据类型：String Number Boolean Null空值 Undefined未定义 ES6新增symbol 引用数据类型：多个不同数据类型值构成的对象object。      基本数据类型是按值访问的，因为可以直接操作保存在变量中的实际值。 var a = 10;  var b = a;  b = 20;    console.log(a); // 10值 b获取的是a值得一份拷">
+<meta property="og:type" content="article">
+<meta property="og:title" content="乱七八糟面试整理">
+<meta property="og:url" content="http://yoursite.com/2018/12/20/乱七八糟面试整理/index.html">
+<meta property="og:site_name" content="自言自语">
+<meta property="og:description" content="1.基本数据类型：String Number Boolean Null空值 Undefined未定义 ES6新增symbol 引用数据类型：多个不同数据类型值构成的对象object。      基本数据类型是按值访问的，因为可以直接操作保存在变量中的实际值。 var a = 10;  var b = a;  b = 20;    console.log(a); // 10值 b获取的是a值得一份拷">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fydffcw2p6j30ho06e74h.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fydfflp0tvj30ik0gmgmp.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fydffqdj2oj30ov0mv0tu.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fydfk2tw5yj30u00zjdix.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fydfma1jiej30kx0bp755.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fydfmem135j30nl0cvjsh.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fydfo35h54j309004omxa.jpg">
+<meta property="og:image" content="file:////Users/lengty/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image008.png">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fydfo9nuckj30am07at9g.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fydfwqj6qvj30v60u0jva.jpg">
+<meta property="og:updated_time" content="2018-12-20T11:36:08.482Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="乱七八糟面试整理">
+<meta name="twitter:description" content="1.基本数据类型：String Number Boolean Null空值 Undefined未定义 ES6新增symbol 引用数据类型：多个不同数据类型值构成的对象object。      基本数据类型是按值访问的，因为可以直接操作保存在变量中的实际值。 var a = 10;  var b = a;  b = 20;    console.log(a); // 10值 b获取的是a值得一份拷">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fydffcw2p6j30ho06e74h.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/20/乱七八糟面试整理/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>乱七八糟面试整理 | 自言自语</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion .logo-line-before i { left: initial; }
+    .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">自言自语</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+    
+  
+  
+
+  
+
+  <article class="post post-type-normal true" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/20/乱七八糟面试整理/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lengty">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="自言自语">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">乱七八糟面试整理
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-20 19:15:29 / 修改时间：19:36:08" itemprop="dateCreated datePublished" datetime="2018-12-20T19:15:29+08:00">2018-12-20</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>1.基本数据类型：String Number Boolean Null空值 Undefined未定义 ES6新增symbol</p>
+<p>引用数据类型：多个不同数据类型值构成的对象object。     </p>
+<p>基本数据类型是按值访问的，因为可以直接操作保存在变量中的实际值。</p>
+<p>var a = 10;  var b = a;  b = 20;    console.log(a); // 10值</p>
+<p>b获取的是a值得一份拷贝，虽然，两个变量的值相等，但是两个变量保存了两个不同的基本数据类型值。b只是保存了a复制的一个副本。所以，b的改变，对a没有影响。</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fydffcw2p6j30ho06e74h.jpg" alt="img"></p>
+<p><strong>引用类型数据：也就是对象类型，比如：Object 、Array 、Function 、Data等。</strong></p>
+<p>　　javascript的引用数据类型是保存在堆内存中的对象。</p>
+<p>引用类型数据在栈内存中保存的实际上是对象在堆内存中的引用地址。通过这个引用地址可以快速查找到保存中堆内存中的对象。</p>
+<p>　　var obj1 = new Object();        var obj2 = obj1;</p>
+<p>　　obj2.name = “我有名字了”;  console.log(obj1.name); // 我有名字了</p>
+<p>obj1赋值给onj2，实际上这个堆内存对象在栈内存的引用地址复制了一份给了obj2，但是实际上他们共同指向了同一个堆内存对象。<strong>实际上改变的是堆内存对象。</strong></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fydfflp0tvj30ik0gmgmp.jpg" alt="img"></p>
+<p>总结区别</p>
+<p>a 声明变量时不同的内存分配：　js中变量都是保存在栈内存中</p>
+<p>　　1）原始值：基本数据类型的值直接保存在栈内存中，值与值之间相互独立。</p>
+<p>这是因为这些原始类型占据的空间是固定的，所以可将他们存储在较小的内存区域 – 栈中。这样存储便于迅速查寻变量的值。</p>
+<p>　　2）引用值：存储在堆（heap）中的对象，也就是说，存储在变量处的值是一个指针（point），指向存储对象的内存地址。变量中只是保存了对象的引用地址，对象属性的值存储在堆内存。</p>
+<p>　　这是因为：引用值的大小会改变，所以不能把它放在栈中，否则会降低变量查寻的速度。</p>
+<p>当比较两个基本数据类型的值是就是比较值,当比较两个引用数据类型时，比较的是对象的内存地址。（每次new都在堆内存开辟一个地址空间）</p>
+<p>b 不同的内存分配机制也带来了不同的访问机制</p>
+<p>　　1）在javascript中是不允许直接访问保存在堆内存中的对象的，所以在访问一个对象时，首先得到的是这个对象在堆内存中的地址，然后再按照这个地址去获得这个对象中的值，这就是传说中的按引用访问。</p>
+<p>　　2）而原始类型的值则是可以直接访问到的。</p>
+<p>c 复制变量时的不同</p>
+<p>　　1）原始值：在将一个保存着原始值的变量复制给另一个变量时，会将原始值的副本赋值给新变量，此后这两个变量是完全独立的，他们只是拥有相同的value而已。</p>
+<p>　　2）引用值：在将一个保存着对象内存地址的变量复制给另一个变量时，会把这个内存地址赋值给新变量，也就是说这两个变量都指向了堆内存中的同一个对象，他们中任何一个作出的改变都会反映在另一个身上。</p>
+<p>d 参数传递的不同（把实参复制给形参的过程）</p>
+<p>　　首先我们应该明确一点：ECMAScript中所有函数的参数都是按值来传递的。</p>
+<p>　　1）原始值：只是把变量里的值传递给参数，之后参数和这个变量互不影响。</p>
+<p>2）引用值：对象变量它里面的值是这个对象在堆内存中的内存地址，因此它传递的值也就是这个内存地址，这也就是为什么函数内部对这个参数的修改会体现在外部的原因了，因为它们都指向同一个对象。</p>
+<p> 2.事件冒泡，事件委托</p>
+<p>​    事件流是从页面接收事件的顺序。JS事件流原理图如下：（JS支持了冒泡流和捕获流，但是目前低版本的IE浏览器还是只能支持冒泡流(IE6,IE7,IE8均只支持冒泡流)）</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fydffqdj2oj30ov0mv0tu.jpg" alt="img"></p>
+<p>事件传播三个阶段:一个完整的JS事件流是从window开始，最后回到window的一个过程 (1~5)捕获过程：从最外层祖先元素向目标元素进行事件的捕获，默认此时不触发事件</p>
+<p>(5~6)目标过程：事件捕获到目标元素，捕获结束开始在目标元素上触发事件</p>
+<p>(6~10)冒泡过程：从目标元素向祖先元素传递，依次触发祖先元素上的事件</p>
+<p>IE8及以下浏览器没有捕获阶段。</p>
+<p>事件冒泡：IE在处理上述事件时候，是由事件开始最具体的元素接收，然后逐级向上传播到根节点。当后代元素上的事件被触发时，其祖先元素上的相同事件也会被触发。</p>
+<p>事件捕获：接收事件的顺序为根节点到具体的节点。</p>
+<p>· 捕获阶段：首先window会获捕获到事件，之后document、documentElement、body会捕获到，再之后就是在body中DOM元素一层一层的捕获到事件，有wrapDiv、innerP。</p>
+<p>· 目标阶段：真正点击的元素的事件发生了两次。 [在目标元素上就不会遵守先发生捕获后发生冒泡这一规则，而是先绑定的事件先发生。]</p>
+<p>· 冒泡阶段：会和捕获阶段相反的步骤将事件一步一步的冒泡到window</p>
+<p>e.target和e.currentTarget</p>
+<p>target和currentTarget都是event上面的属性，target是真正发生事件的DOM元素-触发事件的真正对象，而currentTarget是当前事件发生在哪个DOM元素上（每一层）。</p>
+<p>DOM事件流：</p>
+<p>“DOM2级事件”规定的事件流依次三个阶段：事件捕获阶段、处于目标阶段和事件冒泡阶段。事件捕获的意义在于，能够在目标获得点击事件之前截获事件，并对其作出相应的处理。</p>
+<p>事件处理程序:</p>
+<p>DOM0级事件处理程序：这种指定事件处理程序具有简单，跨浏览器的优点，其事件处理程序会在事件流的冒泡阶段被触发。注意，此种方式无法为同一个元素对同一事件指定多个事件处理程序，如果绑定多次，就会以最后一次为准。event.onclick=fun</p>
+<p>DOM2级事件处理程序：addEventListener()和removeEventListener()。它们接受三个参数：处理的事件名称(事件字符串，无on)，事件处理程序(当事件触发时被调用)，指定是在事件冒泡还是事件捕获阶段处理的布尔值，true则为在事件捕获阶段处理，false为在事件冒泡阶段处理。需要注意的是，通过addEventListener()指定的事件处理程序智能通过removeEventListener()移除；同时，如果在addEventListener()中的第二个参数是一个匿名函数，则无法通过removeEventListener()移除，也没有办法移除。不支持IE8及以下。</p>
+<p>IE实现了与DOM中类似的两个方法：attachEvent()和detachEvent()，这两个方法直接收两个参数，第一个为事件名称（注意事件名称都有on前缀，例如click事件则为onclick），第二个参数为事件处理程序函数。 不同的是后绑定先执行</p>
+<p>缺点：IE仅支持事件捕获的冒泡阶段；attachEvent()事件监听函数内的this关键字指向了window对象，而不是当前元素（IE的一个巨大缺点），而addEventListener()中的this是绑定事件的对象；事件对象仅存在与window.event参数中；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if(eventobj.addEventListener)              //大部分浏览器兼容</span><br><span class="line">	eventobj. addEventListener(eventStr,callback,false)</span><br><span class="line">else         //IE8及以下        将this绑定在事件对象</span><br><span class="line">	eventobj.attachEvent(‘on’+eventStr,   function()&#123;    		callback.call(eventobj)&#125;)</span><br></pre></td></tr></table></figure>
+<p>解除事件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">element.removeEventListener(&apos;click&apos;, function(e)&#123;&#125;, false);</span><br><span class="line"></span><br><span class="line">IE: element.detachEvent(&apos;onclick&apos;, function()&#123;&#125;);</span><br></pre></td></tr></table></figure>
+<p>阻止事件传播:                                                        </p>
+<p>在支持addEventListener()的浏览器中，可以调用事件对象的stopPropagation()方法以阻止事件在传播过程的继续传播。如果在同一对象上定义了其他处理程序，剩下的处理程序将依旧被调用，但调用stopPropagation()之后任何其他对象上的事件处理程序将不会被调用。不仅可以阻止事件在冒泡阶段的传播，还能阻止事件在捕获阶段的传播。</p>
+<p>IE9之前的IE不支持stopPropagation()方法，而是设置事件对象cancelBubble属性为true来实现阻止事件进一步传播。</p>
+<p>阻止事件的默认行为</p>
+<p>e.preventDefault()可以阻止事件的默认行为发生。默认行为是指：点击a标签就转跳到其他页面、拖拽一个图片到浏览器会自动打开、点击表单的提交按钮会提交表单等等，因为有的时候我们并不希望发生这些事情，所以需要阻止默认行为。</p>
+<p>IE9之前的IE中，可以通过设置事件对象的returnValue属性为false达到同样的效果。return false</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function cancelHandler(event)&#123;</span><br><span class="line">	var event = event||window.event;       //兼容IE</span><br><span class="line">//取消事件相关的默认行为</span><br><span class="line">if(event. preventDefault)       </span><br><span class="line">	event. preventDefault();        //标准技术</span><br><span class="line">if(event.returnValue)            </span><br><span class="line">	event. returnValue=false;      //兼容IE9之前的IE</span><br><span class="line">    return false；//用于处理使用对象属性注册的处理程序event.onclick</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>事件委托：</p>
+<p>JavaScript影响网页应用性能有很多方面，如：每个函数都是对象，都会占用内存；内存中的对象越多，性能越差。其次，必须事先指定所有事件处理程序而导致的DOM访问次数越多，就会造成越长的页面交互就绪时间。所以多个事件处理程序过多就会降低事件的性能，解决这种问题的方案就是事件委托。</p>
+<p>事件委托利用事件冒泡，只指定一个事件处理程序，就可以管理某一类的所有事件(绑定给元素的共同祖先元素，谁触发都会导致祖先元素上事件触发)。</p>
+<p>事件委托还有一个好处就是添加进来的元素也能绑定事件：</p>
+<p>但是，不建议对mouseover和mouseout使用事件代理，因为当鼠标从一个元素移到其子节点时，或者当鼠标移除该元素时，都会触发mouseout事件。</p>
+<p>事件对象：</p>
+<p>​       当事件的响应函数被触发时，浏览器每次都会将一个事件对象作为实参传递进响应函数function（event）{}，在事件对象中封装了当前事件相关的一切信息，比如鼠标坐标、哪个键盘按键被按下、鼠标滚轮滚动的方向。</p>
+<p>在IE8中响应函数被触发时，浏览器不会传递事件对象，在IE8及以下浏览器中将事件对象作为window对象的属性保存。window.event。 </p>
+<p>兼容性：if(!event) event=window.event;或更常见 event=event||window.event;</p>
+<p><strong>重排和重绘</strong></p>
+<p>部分渲染树（或者整个渲染树）需要重新分析并且节点尺寸需要重新计算。这被称为重排。注意这里至少会有一次重排-初始化页面布局。</p>
+<p>由于节点的几何属性发生改变或者由于样式发生改变，例如改变元素背景色时，屏幕上的部分内容需要更新。这样的更新被称为重绘。</p>
+<p><strong>什么情况会触发重排和重绘？</strong></p>
+<ul>
+<li>添加、删除、更新 DOM 节点</li>
+<li>通过 display:      none 隐藏一个DOM节点-触发重排和重绘</li>
+<li>通过 visibility:      hidden 隐藏一个DOM节点-只触发重绘，因为没有几何变化</li>
+<li>移动或者给页面中的 DOM 节点添加动画</li>
+<li>添加一个样式表，调整样式属性</li>
+<li>用户行为，例如调整窗口大小，改变字号，或者滚动。</li>
+</ul>
+<p>1.prototype属性</p>
+<p>在典型的面向对象的语言中，如java，都存在类（class）的概念，类就是对象的模板，对象就是类的实例。但是在Javascript语言体系中，是不存在类（Class）的概念的，javascript中不是基于‘类的’，而是通过构造函数（constructor）和原型链（prototype chains）实现的。但是在ES6中提供了更接近传统语言的写法，引入了Class（类）这个概念，作为对象的模板。通过class关键字，可以定义类。基本上，ES6的class可以看作只是一个语法糖，它的绝大部分功能，ES5都可以做到，新的class写法只是让原型对象的写法更加清晰、更像面向对象编程的语法而已。</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fydfk2tw5yj30u00zjdix.jpg" alt="img"></p>
+<p>实例对象.<strong>proto</strong>指向原型对象，实例对象无prototype</p>
+<p>构造函数.prototype指向原型对象</p>
+<p>原型对象.constructor指向构造函数Foo.prototype.constructor = Foo</p>
+<p>总结：函数的原型对象constructor默认指向函数本身，原型对象除了有原型属性外，为了实现继承，还有一个原型链指针<em>proto</em>，该指针指向上一层的原型对象，而上一层的原型对象的结构依然如此，这样利用<em>proto</em>一直指向Object的原型对象上，而Object的原型对象用Object.prototype.<em>proto</em> = null表示原型链的最顶端，如此变形成了JavaScript的原型链继承，同时也解释了为什么所有的JavaScript对象都具有Object的基本方法。</p>
+<p>构造函数：</p>
+<p>​       所谓构造函数，就是提供了一个生成对象的模板并描述对象的基本结构的函数，可以生成多个对象，每个对象都有相同的结构。总的来说，构造函数就是生成对象的模板，对象就是构造函数的实例。所有的实例对象都可以继承构造函数中的属性和方法。但是，同一个对象实例之间，无法共享属性。</p>
+<p>Prototype属性的作用</p>
+<p>为了解决构造函数的对象实例之间无法共享属性的缺点，js提供了prototype属性。js中每个数据类型都是对象（除了null和undefined），而每个对象都继承自另外一个对象，后者称为“原型”（prototype）对象，只有null除外，它没有自己的原型对象。</p>
+<p>　　原型对象上的所有属性和方法，都会被对象实例所共享。</p>
+<p>通过构造函数生成对象实例时，会将对象实例的原型指向构造函数的prototype属性。每一个构造函数都有一个prototype属性，这个属性就是对象实例的原型对象。</p>
+<p>对于构造函数来说，prototype是作为构造函数的属性；对于对象实例来说，prototype是对象实例的原型对象。所以prototype即是属性，又是对象。</p>
+<p>原型对象的属性不是对象实例的属性。对象实例的属性是继承自构造函数定义的属性，因为构造函数内部有一个this关键字来指向将要生成的对象实例。对象实例的属性，其实就是构造函数内部定义的属性。只要修改原型对象上的属性和方法，变动就会立刻体现在所有对象实例上。</p>
+<p>当某个对象实例没有该属性和方法时，就会到原型对象上去查找。如果实例对象自身有某个属性或方法，就不会去原型对象上查找。</p>
+<p>总结一下：</p>
+<p>a：原型对象的作用，就是定义所有对象实例所共享的属性和方法。</p>
+<p>b：prototype，对于构造函数来说，它是一个属性；对于对象实例来说，它是一个原型对象。</p>
+<p>指向构造函数的原型对象可以通过<em>proto</em>来访问属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var mc=new Myclass();  mc.proto==Myclass.prototype//true</span><br></pre></td></tr></table></figure>
+<p>使用in检查对象中是否含有某个属性时，如果对象中没有但是原型中有也会返回true。</p>
+<p>使用对象的hasOwnProperty()来检查自身中是否含有该属性mc.hasOwnProperty(“name”)</p>
+<p>只有当对象自身中含有属性时才会返回true。</p>
+<p>原型链 prototype chains</p>
+<p>对象的属性和方法，有可能是定义在自身，也有可能是定义在它的原型对象。由于原型对象本身对于对象实例来说也是对象，它也有自己的原型，所以形成了一条原型链（prototype chain）。比如，a对象是b对象的原型，b对象是c对象的原型，以此类推。所有一切的对象的原型顶端，都是Object.prototype，即Object构造函数的prototype属性指向的那个对象。</p>
+<p>　　当然，Object.prototype对象也有自己的原型对象，那就是没有任何属性和方法的null对象，而null对象没有自己的原型。</p>
+<p>1 console.log(Object.getPrototypeOf(Object.prototype)); //null</p>
+<p>2 console.log(Person.prototype.isPrototypeOf(boy)) //true</p>
+<p>原型链（prototype chain）的特点有：</p>
+<p>a：读取对象的某个属性时，JavaScript引擎先寻找对象本身的属性，如果找不到，就到它的原型去找，如果还是找不到，就到原型的原型去找。如果直到最顶层的Object.prototype还是找不到，则返回undefined。</p>
+<p>b：如果对象自身和它的原型，都定义了一个同名属性，那么优先读取对象自身的属性，这叫做“覆盖”（overiding）。</p>
+<p>c：一级级向上在原型链寻找某个属性，对性能是有影响的。所寻找的属性在越上层的原型对象，对性能的影响越大。如果寻找某个不存在的属性，将会遍历整个原型链。</p>
+<p>constructor属性    Foo.prototype.constructor = Foo</p>
+<p>prototype对象有一个constructor属性，默认指向prototype对象所在的构造函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function A()&#123;&#125;;</span><br><span class="line">console.log(A.prototype.constructor===A) //true</span><br><span class="line">console.log(A.hasOwnProperty(&apos;prototype&apos;)); //true</span><br><span class="line">console.log(A.prototype.hasOwnProperty(&apos;constructor&apos;)); //true</span><br></pre></td></tr></table></figure>
+<p>由于constructor是定义在原型（prototype）对象上面，意味着可以被所有实例对象继承。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a=new A(); </span><br><span class="line">console.log(a.constructor); //A()</span><br><span class="line">console.log(a.constructor===A.prototype.constructor);//true</span><br></pre></td></tr></table></figure>
+<p>上面代码中，a是构造函数A的实例对象，但是a自身没有contructor属性，该属性其实是读取原型链上面的A.prototype.constructor属性。</p>
+<p>constructor属性的作用</p>
+<p>a：分辨原型对象到底属于哪个构造函数</p>
+<p>function A(){};      var a=new A(); </p>
+<p>console.log(a.constructor===A) //true       会沿着原型链</p>
+<p>b：从实例新建另一个实例</p>
+<p>function A() {};    var a = new A();    var b = new a.constructor();</p>
+<p>console.log(b instanceof A); //true</p>
+<p>上面代码中，a是构造函数A的实例对象，可以从a.constructor间接调用构造函数。</p>
+<p>c：调用自身的构造函数成为可能</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function Father() &#123;&#125; </span><br><span class="line">function Son() &#123;</span><br><span class="line">	Son.height.constructor.call(this);</span><br><span class="line">&#125; </span><br><span class="line">Son.height = new Father();</span><br></pre></td></tr></table></figure>
+<p>上面代码中，Father和Son都是构造函数，在Son内部的this上调用Father，就会形成Son继承Father的效果。</p>
+<p>e：由于constructor属性是一种原型对象和构造函数的关系，所以在修改原型对象的时候，一定要注意constructor的指向问题。</p>
+<p>解决方法有两种，要么将constructor属性指向原来的构造函数，要么只在原型对象上添加属性和方法，避免instanceof失真。</p>
+<p>instanceof运算符         通过构造函数创建的对象就是该构造函数的实例   </p>
+<p>instanceof运算符返回一个布尔值，表示指定对象是否为某个构造函数的实例。</p>
+<p>只有在比较自定义的对象时才有意义。 如果用来比较内置类型，将会和 typeof 操作符 一样用处不大。</p>
+<p>function A() {};         var a = new A();            console.log(a instanceof A); //true</p>
+<p>因为instanceof对整个原型链上的对象都有效，所以同一个实例对象，可能会对多个构造函数都返回true。</p>
+<p>console.log(a instanceof A); //true</p>
+<p>console.log(a instanceof Object); //true</p>
+<p>　注意，instanceof对象只能用于复杂数据类型（数组，对象等），不能用于简单数据类型（布尔值，数字，字符串等）。</p>
+<p>var b = true;      var c = ‘string’;</p>
+<p>console.log(b instanceof Boolean); //false</p>
+<p>console.log(c instanceof String); //false</p>
+<p>此外，null和undefined都不是对象，所以instanceof 总是返回false。</p>
+<p>console.log(null instanceof Object); //false</p>
+<p>console.log(undefined instanceof Object); //false</p>
+<p>利用instanceof运算符，还可以巧妙地解决，调用构造函数时，忘了加new命令的问题。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function Keith(name,height) &#123;</span><br><span class="line">     if (! this instanceof Keith) &#123; </span><br><span class="line">     	return new Keith(name,height); </span><br><span class="line">     &#125;</span><br><span class="line">     this.name = name;  this.height = height;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面代码中，使用了instanceof运算符来判断函数体内的this关键字是否指向构造函数Keith的实例，如果不是，就表明忘记加new命令，此时构造函数会返回一个对象实例，避免出现意想不到的结果。</p>
+<p>typeof和instanceof：</p>
+<p>typeof方法返回一个字符串，来表示数据的类型</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fydfma1jiej30kx0bp755.jpg" alt="img"></p>
+<p>用typeof来判断数据类型其实并不准确。数组、正则、日期、对象的typeof返回值都是object。 </p>
+<p>所以在typeof判断类型的基础上，我们还需要利用Object.prototype.toString方法来进一步判断数据类型。toString方法和typeof方法返回值的区别：</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fydfmem135j30nl0cvjsh.jpg" alt="img"></p>
+<p>为了检测一个对象的类型，强烈推荐使用 Object.prototype.toString 方法，因为这是唯一一个可依赖的方式。所以我们一般通过该方法来进行数据类型的验证。</p>
+<p>除非为了检测一个变量是否已经定义，我们应尽量避免使用 typeof 操作符。</p>
+<p>this指向：</p>
+<ol>
+<li>当以函数的形式调用时，直接调用函数时，this 指向全局对象     </li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">foo();       //this是全局对象，即使在方法内部调用也是指向全局对象</span><br><span class="line">foo.method = function() &#123;</span><br><span class="line">   let that = this;</span><br><span class="line">   console.log(this); //Foo</span><br><span class="line">   function test() &#123;</span><br><span class="line">     console.log(this);//window</span><br><span class="line">     console.log(that);//Foo</span><br><span class="line">   &#125;</span><br><span class="line">   test();//方法内部直接调用某一函数也是指向全局对象</span><br><span class="line"> &#125;;</span><br><span class="line">foo.methodTest = function() &#123;</span><br><span class="line">  console.log(this);</span><br><span class="line">&#125;;</span><br><span class="line">foo.methodTest(); //foo对象</span><br><span class="line">let t = foo.methodTest;</span><br><span class="line">t();//this指向全局对象</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><p>当以方法的形式调用时，谁调用方法this就是谁</p>
+</li>
+<li><p>当以构造函数的形式调用时，this就是新创建的对象</p>
+</li>
+<li><p>使用call.apply调用时，this是指定的对象（第一个参数）</p>
+</li>
+<li><p>事件响应函数中，响应函数绑定给谁this就是谁</p>
+</li>
+</ol>
+<p>call、apply、bind方法的共同点和区别：</p>
+<p>apply 、 call 、bind 三者都是用来改变函数的this对象的指向的；</p>
+<p>apply 、 call 、bind 三者第一个参数都是this要指向的对象，也就是想指定的上下文（函数的每次调用都会拥有一个特殊值——本次调用的上下文（context）——这就是this关键字的值。）；</p>
+<p>apply 、 call 、bind 三者都可以利用后续参数传参；</p>
+<p>bind 是返回对应函数，便于稍后调用；apply 、call 则是立即调用 。</p>
+<p>（1）call</p>
+<p>call([thisObj[,arg1[, arg2[, [,.argN]]]]])</p>
+<p>说明： call 方法可以用一个对象来代替另一个对象调用一个方法。</p>
+<p>call 方法可将一个函数的对象上下文从初始的上下文改变为由 thisObj 指定的新对象。</p>
+<p>thisObj的取值有以下4种情况：</p>
+<p>（1） 不传，或者传null,undefined， 函数中的this指向window对象</p>
+<p>（2） 传递另一个函数的函数名，函数中的this指向这个函数的引用</p>
+<p>（3） 传递字符串、数值或布尔类型等基础类型，函数中的this指向其对应的包装对象，如 String、Number、Boolean</p>
+<p>（4） 传递一个对象，函数中的this指向这个对象</p>
+<p>（2）apply</p>
+<p>apply([thisObj[,argArray]])</p>
+<p>apply和call作用完全一样，只是接受参数的方式不太一样。</p>
+<p>call 需要把参数按顺序传递进去，而 apply 则是把参数放在数组里。在JavaScript 中，某个函数的参数数量是不固定的，因此要说适用条件的话，当你的参数是明确知道数量时用 call ；而不确定的时候用 apply，然后把参数 push 进数组传递进去。当参数数量不确定时，函数内部也可以通过 arguments 这个数组来遍历所有的参数。</p>
+<p>（3）bind</p>
+<p>bind()方法会创建一个新函数，称为绑定函数，当调用这个绑定函数时，绑定函数会以创建它时传入 bind()方法的第一个参数作为 this，传入 bind() 方法的第二个以及以后的参数加上绑定函数运行时本身的参数按照顺序作为原函数的参数来调用原函数。</p>
+<p>Javascript中，多次 bind() 是无效的。更深层次的原因， bind() 的实现，相当于使用函数在内部包了一个 call / apply ，第二次 bind() 相当于再包住第一次 bind() ,故第二次以后的 bind 是无法生效的。</p>
+<p>闭包：函数可以嵌套定义在其他函数内部，这样它就可以访问它们被定义时所处的作用域中的任何变量。作用域链在函数定义时创建，并一直绑定在函数上。</p>
+<p>作用域链：嵌套函数当前对象（包含函数参数和变量）—外层函数对象—全局对象</p>
+<p>定义一个函数，实际上保存了一个作用域链</p>
+<p>调用这个函数，会创建一个新对象存储局部变量，将这个对象放在作用域链头部</p>
+<p>with()函数用于临时扩展作用域链，将obj添加到作用域链头部</p>
+<p>函数在它自己的作用域中执行，而不是在调用它的作用域中执行。</p>
+<p>1.每次调用JavaScript函数，都会创建一个新的对象，保存局部变量，把这个对象添加至作用域链。                </p>
+<p>2.每次返回，从作用域链中将绑定对象删除</p>
+<p>如果不存在嵌套函数，也没有其他引用指向这个对象，则垃圾回收</p>
+<p>如果定义了嵌套函数，并将其作为返回值返回或存储在某处的属性中，这时就会有一个外部引用指向这个嵌套函数。不会被垃圾回收，并且指向的变量绑定对象也不会被垃圾回收。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function counter() &#123;</span><br><span class="line">  var count = 0;</span><br><span class="line">  return &#123;</span><br><span class="line">    add: function() &#123;</span><br><span class="line">      count++;</span><br><span class="line">    &#125;,</span><br><span class="line">    get: function() &#123;</span><br><span class="line">      return count;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line">let c1 = counter();</span><br><span class="line">let c2 = counter();</span><br><span class="line">c1.add();</span><br><span class="line">console.log(c1.get());  //1</span><br><span class="line">console.log(c2.get());  //0</span><br></pre></td></tr></table></figure>
+<p>以上代码，每一次调用形成一个新的对象，形成两个闭包add，get。</p>
+<p>对象中保存了当前保存变量和参数的对象，同一个对象中共享变量，两次调用形成不同对象间互不干扰。 </p>
+<p>循环中的闭包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for (var i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">  setTimeout(function() &#123;</span><br><span class="line">    console.log(i);</span><br><span class="line">  &#125;, 0);</span><br><span class="line">&#125;   //输出10</span><br></pre></td></tr></table></figure>
+<p>上面的代码不会输出数字 0 到 9，而是会输出数字 10 十次。</p>
+<p>当 console.log 被调用的时候，匿名函数保持对外部变量 i 的引用，此时 for循环已经结束， i 的值被修改成了 10。为了得到想要的结果，需要在每次循环中创建变量 i 的拷贝。</p>
+<p>避免引用错误:</p>
+<p>为了正确的获得循环序号，最好使用 匿名包装器（其实就是我们通常说的自执行匿名函数）。</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fydfo35h54j309004omxa.jpg" alt="img"><img src="file:////Users/lengty/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image008.png" alt="img"></p>
+<p>外部的匿名函数会立即执行，并把 i 作为它的参数，此时函数内 e 变量就拥有了 i 的一个拷贝。当传递给 setTimeout 的匿名函数执行时，它就拥有了对 e 的引用，而这个值是不会被循环改变的。有另一个方法完成同样的工作，那就是从匿名包装器中返回一个函数。这和上面的代码效果一样。</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fydfo9nuckj30am07at9g.jpg" alt="img"></p>
+<p>这里的陷阱就是：函数带()才是执行函数！ 单纯的一句 var f = function() { alert(‘Hi’); }; 是不会弹窗的， f(); 才会执行函数内部的代码。</p>
+<p>原理：在同一个函数调用中，形成的10个闭包存储在一个数组中，保存在同一个对象中共享变量。</p>
+<p>使用闭包的注意点</p>
+<p>1）由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在IE中可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。不必要的闭包只会徒增内存消耗。</p>
+<p>2）闭包会在父函数外部，改变父函数内部变量的值。所以，如果你把父函数当作对象（object）使用，把闭包当作它的公用方法（Public Method），把内部变量当作它的私有属性（private value），这时一定要小心，不要随便改变父函数内部变量的值。</p>
+<p>函数作用域</p>
+<p>在ES6之前，JS作用域只有两种：函数作用域和全局作用域</p>
+<p>ES6定义了块级作用域，使用let声明的变量不会提升，函数声明会完全提升。使用let声明的变量只能在块级作用域里访问，声明前不可用（暂时性死区）</p>
+<p>每次引用一个变量，JavaScript 会向上遍历整个作用域直到找到这个变量为止。 如果到达全局作用域但是这个变量仍未找到，则会抛出 ReferenceError 异常。</p>
+<p>ES6 明确规定，如果区块中存在let和const命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错。</p>
+<p>使用var 声明和 function 声明都将会被提升到当前作用域的顶部。</p>
+<p>函数声明提前：     函数定义形参相当于在函数作用域中声明了变量</p>
+<p>使用函数声明形式创建的函数function fun(){}会在所有代码执行之前被创建</p>
+<p>使用函数表达式创建的函数var fun=function(){}不会被声明提前</p>
+<p>函数声明先提升，变量后提升，且函数声明会被提升到普通变量之前（变量提升时，只提升了声明，并没有被赋值）</p>
+<p>名称解析顺序</p>
+<p>JavaScript 中的所有作用域，包括全局作用域，都有一个特别的名称 this 指向当前对象。</p>
+<p>函数作用域内也有默认的变量 arguments，其中包含了传递到函数中的参数。</p>
+<p>比如，当访问函数内的 foo 变量时，JavaScript 会按照下面顺序查找：</p>
+<p>1.当前作用域内是否有 var foo 的定义。</p>
+<p>2.函数形式参数是否有使用 foo 名称的。</p>
+<p>3.函数自身是否叫做 foo。</p>
+<p>4.回溯到上一级作用域，然后从 #1 重新开始。</p>
+<p>命名空间</p>
+<p>只有一个全局作用域导致的常见错误是命名冲突，在JS中可以通过匿名包装器解决。</p>
+<p>推荐使用匿名包装器（自执行的匿名函数）来创建命名空间。这样不仅可以防止命名冲突， 而且有利于程序的模块化。</p>
+<p>arguments：在调用函数时，浏览器每次都会传递进两个隐含的参数：</p>
+<p>函数的上下文对象this</p>
+<p>封装的实参对象arguments：arguments是一个类数组对象（有数组操作但不是数组类型）</p>
+<p>调用函数时，所传递的实参都会保存在arguments对象中</p>
+<p>它里面有一个callee属性：这个属性对应一个函数就是当前正在指向的函数的对象。</p>
+<p>解决setTimeout中函数this是指向全局对象问题</p>
+<p>这是由于setTimeout()调用的代码运行在与所在函数完全分离的执行环境上。这会导致这些代码中包含的 this 关键字会指向全局对象。</p>
+<p>1.将当前对象的this存为一个变量，定时器的函数利用闭包来访问这个变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function obj()&#123;</span><br><span class="line">    var that = this ;</span><br><span class="line">    setTimeout(function()&#123;</span><br><span class="line">              …</span><br><span class="line">	console.log(that.num)//利用闭包访问that，that是一个指向obj的指针</span><br><span class="line"> &#125;,1000)&#125;</span><br></pre></td></tr></table></figure>
+<p>2.利用bind()方法</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(function()&#123;</span><br><span class="line">   console.log(this.num);</span><br><span class="line">&#125;.bind(this),1000)//利用bind()将this绑定到这个函数上</span><br></pre></td></tr></table></figure>
+</code></pre><p>3.箭头函数</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(()=&gt;&#123;</span><br><span class="line">   console.log(this.num);</span><br><span class="line">  	&#125;,1000)//箭头函数中的this总是指向外层调用者，obj</span><br></pre></td></tr></table></figure>
+<p>ES6中的箭头函数完全修复了this的指向，this总是指向词法作用域，也就是外层调用者obj，因此利用箭头函数就可以轻松解决这个问题。</p>
+<p><strong>类型转换：强制和自动的规则</strong></p>
+<p>显示类型转换</p>
+<p>1.Number(mix)函数，可以将任意类型的参数mix转换为数值类型。其规则为：</p>
+<p>  （1）如果是布尔值，true和false分别被转换为1和0</p>
+<p>  （2）如果是数字值，返回本身。</p>
+<p>  （3）如果是null，返回0。</p>
+<p>  （4）如果是undefined，返回NaN。</p>
+<p>  （5）如果是字符串，遵循以下规则：</p>
+<p>​          1、如果字符串中只包含数字，则将其转换为十进制（忽略前导0）</p>
+<p>​          2、如果字符串中包含有效的浮点格式，将其转换为浮点数值（忽略前导0）</p>
+<p>​          3、如果是空字符串，将其转换为0</p>
+<p>​          4、如果字符串中包含非以上格式，则将其转换为NaN</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">console.log(Number(&quot;010&quot;)); //10</span><br><span class="line">console.log(Number(&quot;0o10&quot;));//8</span><br><span class="line">console.log(Number(&quot;0x10&quot;));//16</span><br></pre></td></tr></table></figure>
+<p>  （6）如果是对象，则调用对象的valueOf()方法，然后依据前面的规则转换返回的值。如果转换的结果是NaN，则调用对象的toString()方法，再次依照前面的规则转换返回的字符串值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">console.log(new Number(10) === 10)// False, 对象与数字的比较</span><br><span class="line">console.log(Number(10) === 10) // True, 数字与数字的比较</span><br><span class="line">console.log(new Number(10) + 0 === 10);// True, 由于隐式的类型转换</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><p>parseInt(string, radix)函数，将字符串转换为整数类型的数值。它也有一定的规则：</p>
+<p>（1）忽略字符串前面的空格，直至找到第一个非空字符</p>
+<p>（2）如果第一个字符不是数字符号或者负号，返回NaN</p>
+<p>（3）如果第一个字符是数字，则继续解析直至字符串解析完毕或者遇到一个非数字符号</p>
+<p>（4）如果以0x开头，则将其当作十六进制来解析</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//0x18 = 8*16^0 + 1*16^1 = 24 </span><br><span class="line">let n = 0o20;</span><br><span class="line">console.log(n);//16</span><br><span class="line">console.log(parseInt(&quot;0o20&quot;)); //0</span><br><span class="line">console.log(parseInt(&quot;020&quot;)); //20</span><br></pre></td></tr></table></figure>
+<p>  （5）如果指定radix参数，则以radix为基数进行解析</p>
+<ol start="3">
+<li>parseFloat(string)函数，将字符串转换为浮点数类型的数值。</li>
+</ol>
+<p>它的规则与parseInt基本相同，但也有点区别：字符串中第一个小数点符号是有效的，另外parseFloat会忽略所有前导0，如果字符串包含一个可解析为整数的数，则返回整数值而不是浮点数值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(parseFloat(&quot;000013.002&quot;));//13.002</span><br><span class="line">console.log(parseFloat(&quot;000013.000&quot;));//13</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>toString(radix)方法。除undefined和null之外的所有类型的值都具有toString()方法，其作用是返回对象的字符串表示</li>
+</ol>
+<p>5、String(mix)函数，将任何类型的值转换为字符串，其规则为：</p>
+<p>  （1）如果有toString()方法，则调用该方法（不传递radix参数）并返回结果</p>
+<p>  （2）如果是null，返回’’null”</p>
+<p>  （3）如果是undefined，返回”undefined”</p>
+<p>6、Boolean(mix)函数，将任何类型的值转换为布尔值。</p>
+<p>以下值会被转换为false：false、””、0、NaN、null、undefined，其余任何值都会被转换为true</p>
+<p>隐式类型转换</p>
+<p>在某些情况下，即使我们不提供显示转换，Javascript也会进行自动类型转换，主要情况有：</p>
+<p>1、 用于检测是否为非数值的函数：isNaN(mix)</p>
+<p>isNaN()函数，经测试发现，该函数会尝试将参数值用Number()进行转换，如果结果为“非数值”则返回true，否则返回false。</p>
+<p>2、递增递减操作符（包括前置和后置）、一元正负符号操作符</p>
+<p>​      这些操作符适用于任何数据类型的值，针对不同类型的值，该操作符遵循以下规则（经过对比发现，其规则与Number()规则基本相同）：</p>
+<p>​      （1）如果是包含有效数字字符的字符串，先将其转换为数字值（转换规则同Number()），在执行加减1的操作，字符串变量变为数值变量。</p>
+<p>​      （2）如果是不包含有效数字字符的字符串，将变量的值设置为NaN，字符串变量变成数值变量。</p>
+<p>​      （3）如果是布尔值false，先将其转换为0再执行加减1的操作，布尔值变量编程数值变量。</p>
+<p>​      （4）如果是布尔值true，先将其转换为1再执行加减1的操作，布尔值变量变成数值变量。</p>
+<p>​      （5）如果是浮点数值，执行加减1的操作。</p>
+<p>（6）如果是对象，先调用对象的valueOf()方法，然后对该返回值应用前面的规则。如果结果是NaN，则调用toString()方法后再应用前面的规则。对象变量变成数值变量。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let b = true;</span><br><span class="line">console.log(++b); //2</span><br><span class="line">console.log(++b); //3</span><br><span class="line">let str = &quot;aa123&quot;;</span><br><span class="line">console.log(++str);//Nan</span><br><span class="line">str = &apos;00123&apos;</span><br><span class="line">console.log(++str);//124</span><br><span class="line">str = &quot;02dd&quot;;</span><br><span class="line">console.log(++str);//NaN</span><br></pre></td></tr></table></figure>
+<p>3、加法运算操作符</p>
+<p>如果两个操作值都是数值，其规则为：</p>
+<p>(1)如果一个操作数为NaN，则结果为NaN</p>
+<p>(2)如果是Infinity+Infinity，结果是Infinity</p>
+<p>(3)如果是-Infinity+(-Infinity)，结果是-Infinity</p>
+<p>(4)如果是Infinity+(-Infinity)，结果是NaN</p>
+<p>(5)如果是+0+(+0)，结果为+0</p>
+<p>(6)如果是(-0)+(-0)，结果为-0</p>
+<p>(7)如果是(+0)+(-0)，结果为+0</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+&apos;10&apos; === 10; // true 使用一元的加号操作符，可以把字符串转换为数字。</span><br></pre></td></tr></table></figure>
+<p>如果有一个操作值为字符串，则：</p>
+<p>如果两个操作值都是字符串，则将它们拼接起来</p>
+<p>如果只有一个操作值为字符串，则将另外操作值转换为字符串，然后拼接起来</p>
+<p>​    如果一个操作数是对象、数值或者布尔值，则调用toString()方法取得字符串值，然后再应用前面的字符串规则。对于undefined和null，分别调用String()显式转换为字符串。</p>
+<p>可以看出，加法运算中，如果有一个操作值为字符串类型，则将另一个操作值转换为字符串，最后连接起来。</p>
+<p>4、 乘除、减号运算符、取模运算符</p>
+<p>这些操作符针对的是运算，所以他们具有共同性：如果操作值之一不是数值，则被隐式调用Number()函数进行转换。</p>
+<p>5、 相等操作符（==）</p>
+<p>相等操作符会对操作值进行隐式转换后进行比较：</p>
+<p>（1）如果一个操作值为布尔值，则在比较之前先将其转换为数值</p>
+<p>（2）如果一个操作值为字符串，另一个操作值为数值(包括优先转换过来的数值)，则通过Number()函数将字符串转换为数值</p>
+<p>（3）如果一个操作值是对象，另一个不是，则调用对象的valueOf()方法，得到的结果按照前面的规则进行比较</p>
+<p>（4）null与undefined是相等的</p>
+<p>（5）如果一个操作值为NaN，则相等比较返回false</p>
+<p>（6）如果两个操作值都是对象，则比较它们是不是指向同一个对象</p>
+<p>6、 关系操作符（&lt;, &gt;, &lt;=, &gt;=）</p>
+<p>关系操作符的操作值也可以是任意类型的，所以使用非数值类型参与比较时也需要系统进行隐式类型转换：</p>
+<p>（1）如果两个操作值都是数值，则进行数值比较</p>
+<p>（2）如果两个操作值都是字符串，则比较字符串对应的字符编码值</p>
+<p>（3）如果只有一个操作值是数值，则将另一个操作值转换为数值，进行数值比较</p>
+<p>（4）如果一个操作数是对象，则调用valueOf()方法（如果对象没有valueOf()方法则调用toString()方法），得到的结果按照前面的规则执行比较</p>
+<p>（5）如果一个操作值是布尔值，则将其转换为数值，再进行比较</p>
+<p>注：NaN是非常特殊的值，它不和任何类型的值相等，包括它自己，同时它与任何类型的值比较大小时都返回false。</p>
+<p>7、逻辑操作符（!、&amp;&amp;、||）</p>
+<p>逻辑非（！）操作符首先通过Boolean()函数将它的操作值转换为布尔值，然后求反。</p>
+<p>逻辑与（&amp;&amp;）操作符，如果一个操作值不是布尔值时，遵循以下规则进行转换：</p>
+<p>（1）如果第一个操作数经Boolean()转换后为true，则返回第二个操作值，否则返回第一个值（不是Boolean()转换后的值）</p>
+<p>（2）如果有一个操作值为null，返回null</p>
+<p>（3）如果有一个操作值为NaN，返回NaN</p>
+<p>（4）如果有一个操作值为undefined，返回undefined</p>
+<p>逻辑或（||）操作符，如果一个操作值不是布尔值，遵循以下规则：</p>
+<p>（1）如果第一个操作值经Boolean()转换后为false，则返回第二个操作值，否则返回第一个操作值（不是Boolean()转换后的值）</p>
+<p>（2）对于undefined、null和NaN的处理规则与逻辑与（&amp;&amp;）相同</p>
+<p>实现一个类 构造函数   new一个实例</p>
+<p>new的过程    var a = new A(‘testa’)</p>
+<p>1、创建一个空对象。var obj = {};</p>
+<p>2、设置新对象的<code>__proto__</code>属性指向构造函数的prototype对象；<code>obj.__proto__ = A.prototype;</code></p>
+<p>3、将构造函数的作用域赋给新对象，this就指向了新对象, </p>
+<p>   使用新对象调用函数     A.call(obj);　　//{}.构造函数();</p>
+<p>4、执行构造函数中的代码（给这个新对象添加方法和属性）</p>
+<p>5、返回这个对象（this）</p>
+<p><strong>如果构造函数中返回的是一个对象，数组，那么就会覆盖返回原来的this对象，如果不是，即使是undefined，null和 空 都是返回this对象。</strong></p>
+<p>6、将初始化完毕的新对象地址，保存到等号左边的变量中</p>
+<p>注意： </p>
+<p> 1、用new调用的函数，得到的永远是一个对象，不管函数有没有返回值 </p>
+<p> 2、使用new调用函数，这个函数就是一个用来创建对象的函数（构造函数）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let f = new Foo();</span><br><span class="line">console.log(typeof f);  //object</span><br><span class="line">console.log(typeof Foo);//function</span><br></pre></td></tr></table></figure>
+<p>原型继承：子类型基于父类型，子类型拥有父类型所有的属性和方法（从父类型继承得到）</p>
+<p> 使用new关键字和构造函数的prototype属性都是定义类型的特定方式。</p>
+<p>1.实现JS的继承：</p>
+<p>​    //  设置原型：将子对象构造函数的prototype属性指向父对象的一个实例</p>
+<p>​    Employee.prototype = new Person()</p>
+<p>​    //  设置原型的构造器</p>
+<p>Employee.prototype.constructor=Employee</p>
+<p>prototype.constructor仅可以用于识别对象是由哪个构造函数初始化的,用于constructor类型判断</p>
+<p>2.为了避免上一个方法需要重复创建原型对象实例的问题，可以直接将子对象构造函数的prototype指向父对象构造函数的prototype，这样，所有Parent.prototype中的属性和方法也能被重用，同时不需要重复创建原型对象实例：</p>
+<p>​    Child.prototype = Parent.prototype</p>
+<p>​    Child.prototype.constructor = Child</p>
+<p>在 JavaScript 中，对象是作为引用类型存在的，这种方法实际上是将Child.prototype和Parent.prototype中保存的指针指向了同一个对象，因此，当我们想要在子对象原型中扩展一些属性以便之后继续继承的话，父对象的原型也会被改写，因为这里的原型对象实例始终只有一个，这也是这种继承方式的缺点。</p>
+<p>3.直接将父对象设置为子对象的原型，ES5 中的 Object.create()方法 </p>
+<p>多层继承：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">function Person() &#123;&#125;</span><br><span class="line">   Person.prototype.name = &quot;person&quot;;</span><br><span class="line">   Person.prototype.say = function() &#123;</span><br><span class="line">     //如果对象不存在name属性，则使用原型链的name</span><br><span class="line">     if (!this.name) &#123;</span><br><span class="line">       this.name = this.proto.name;</span><br><span class="line">     &#125;</span><br><span class="line">     console.log(this.name);</span><br><span class="line">   &#125;;</span><br><span class="line"></span><br><span class="line">   function Man() &#123;&#125;</span><br><span class="line">   //设置Man继承Person</span><br><span class="line">   Man.prototype = new Person();</span><br><span class="line">   Man.prototype.constructor = Man;</span><br><span class="line">   // 继承可以通过设置原型对象上的属性保存父类的方法属性</span><br><span class="line">   Man.prototype.superClass = new Person();</span><br><span class="line">   Man.prototype.name = &quot;man&quot;;</span><br><span class="line">   Man.prototype.say = function() &#123;</span><br><span class="line">     console.log(this.name);</span><br><span class="line">   &#125;;</span><br><span class="line"></span><br><span class="line">   function Child() &#123;&#125;</span><br><span class="line">   Child.prototype = new Man();       </span><br><span class="line">   Child.prototype.superClass = new Man();</span><br><span class="line">   Child.prototype.say = function() &#123;</span><br><span class="line">     console.log(&quot;child&quot;);</span><br><span class="line">   &#125;;</span><br><span class="line">   </span><br><span class="line">   var c = new Child();</span><br><span class="line">   c.say();   //child</span><br><span class="line">   c.superClass.say();  //man</span><br><span class="line">   c.superClass.superClass.say(); //person</span><br><span class="line">   c.name = &quot;child&quot;;</span><br><span class="line">   c.superClass.say.call(c);  //child</span><br></pre></td></tr></table></figure>
+<p>多重继承：从多个父类型派生出一个子类型</p>
+<p>1.使用call、apply绑定this</p>
+<p>​    var s1 = function(name) {                          var s2 = function(sex) {</p>
+<p>​      this.name = name;                                        this.sex = sex;</p>
+<p>​      this.getName = function() {                    };</p>
+<p>​        console.log(this.name)                        var s3 = function(age) {</p>
+<p>​      }                                                                 this.age = age;</p>
+<p>​    };                                                             };</p>
+<p>​    var Student = function(name, sex, age, score) {</p>
+<p>​      s1.call(this, name);     s2.call(this, sex);      s3.call(this, age);</p>
+<p>​      this.score = score;</p>
+<p>​    };</p>
+<p>​    Student.prototype.constructor = Student;</p>
+<p>​    var s = new Student(“jack”, “male”, “12”, “100”);//参数过多的话可以使用object参数</p>
+<p>这种方式的最大优势就是，在子对象的构造器中，是对子对象的自身属性进行完全的重建，引用类型的变量也会生成一个新值而不是一个引用，所以对子对象的任何操作都不会影响父对象。而这种方法的缺点在于，在子对象的构建过程中没有使用过new操作符，因此子对象不会继承父级原型对象上的任何属性，基类的方法只能定义在类中，这样在每次实例化的时候都会创建该方法，造成多余内存占用</p>
+<p>如果单继承中使用可以手动将子对象构造器原型设为父对象的实例：Child.prototype = new Parent()解决问题。</p>
+<p>2.传入多个需要拷贝属性的对象，依次进行属性的全拷贝</p>
+<p>​    function multi() {</p>
+<p>​        var n = {}, stuff, i = 0,</p>
+<p>​            len = arguments.length</p>
+<p>​        for (i = 0; i &lt; len; i++) {</p>
+<p>​            stuff = arguments[i]</p>
+<p>​            for (var key in stuff) {</p>
+<p>​                n[i] = stuff[i]</p>
+<p>​            }</p>
+<p>​        }</p>
+<p>​        return n</p>
+<p>​    }</p>
+<p>根据对象传入的顺序依次进行拷贝，但是如果后传入的对象包含和前面对象相同的属性，后者将会覆盖前者。</p>
+<p>style  currentStyle  getComputedStyle</p>
+<p>1、  style：只能取到内联样式设置的值，设置的样式也都是内联样式</p>
+<p>//写  .style = “… : …  ; … : …”          //读  .style.width = “” </p>
+<p>返回的是字符串，带px或者是auto，如果没有设定内联样式返回空字符串</p>
+<p>2、currentStyle: 只兼容IE,不兼容火狐和谷歌  读取当前元素正在显示的样式</p>
+<p>​      ele.currentStyle[“attr”] 或者ele.currentStyle.attr;</p>
+<p>3、getComputedStyle: 兼容火狐谷歌,不兼容IE                                             </p>
+<p>​      window.getComputedStyle(ele,null)[attr] 或者 window.getComputedStyle(ele,null).attr</p>
+<p>解决兼容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function getStyle(obj, name) &#123;</span><br><span class="line">  if (window.getComputedStyle) &#123;</span><br><span class="line">    return getComputedStyle(obj, null)[name];</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    return obj.currentStyle[name];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fydfwqj6qvj30v60u0jva.jpg" alt="img"></p>
+<p>本身的宽高,不包括border              本身的宽高,包括border</p>
+<p>• clientWidth                                             • offsetWidth</p>
+<p>• clientHeight                                            • offsetHeight</p>
+<p>距离左侧和上部的距离,相对于窗口          获取左边框宽度和上边框宽度</p>
+<p>• offsetLeft                                               • clientLeft</p>
+<p>• offsetTop                                               • clientTop</p>
+<p>获取可以滚动的宽度(不包括border) </p>
+<p>如果内容宽高比本身小,该值为本身宽高,否则就是内容的宽高</p>
+<p>• scrollWidth         • scrollHeight</p>
+<p>滚动出去的距离                                      相对于窗口左上角的点</p>
+<p>• scrollLeft                                               • clientX</p>
+<p>• scrollTop                                               • clientY</p>
+<p>相对于屏幕左上角的点(建议移动端使用)               相对于本身左上角的点(非标准属性)</p>
+<p>• screen                                                                  •offsetX</p>
+<p>• screenY                                                                • offsetY</p>
+<p>相对于整个文档左上角的点(建议移动端使用)</p>
+<p>• pageX</p>
+<p>• pageY</p>
+<p>获取窗口的宽高                                                    获取正文的宽高(可以滚动的宽高)</p>
+<p>• document.body.clientWidth                                    • document.body.scrollWidth</p>
+<p>• document.body.clientHeight                                   • docuemnt.body.scrollHeight</p>
+<p>• document.body.offsetWidth (border)</p>
+<p>• docuemnt.body.offsetHeight (border)</p>
+<p>获取正文滚出去的宽高                                          获取屏幕分辨率宽高</p>
+<p>• document.body.scrollTop                                       • window.screen.width</p>
+<p>• document.body.scrollLeft                                       • window.screen.height</p>
+<p>window.location对象</p>
+<p>window.location===document.location。location的属性表。</p>
+<p>以”<a href="http://www.google.com:8080/loanOrder/detail?orderId=1236#type&quot;为例" target="_blank" rel="noopener">http://www.google.com:8080/loanOrder/detail?orderId=1236#type&quot;为例</a></p>
+<table>
+<thead>
+<tr>
+<th><strong>属性名</strong></th>
+<th><strong>例子</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hash</td>
+<td>“#type”</td>
+<td>设置或返回URL中的#后面的hash值，如果没有则为””</td>
+</tr>
+<tr>
+<td>host</td>
+<td>“<a href="http://www.google.com:8080&quot;" target="_blank" rel="noopener">www.google.com:8080&quot;</a></td>
+<td>设置或返回URL中的主机名称和端口号</td>
+</tr>
+<tr>
+<td>hostName</td>
+<td>“<a href="http://www.google.com&quot;" target="_blank" rel="noopener">www.google.com&quot;</a></td>
+<td>设置或返回URL中的主机名称</td>
+</tr>
+<tr>
+<td>href</td>
+<td>“<a href="http://www.google.com:8080" target="_blank" rel="noopener">http://www.google.com:8080</a>   /loanOrder   /detail?orderId=1236   #type”</td>
+<td>设置或返回完整的URL</td>
+</tr>
+<tr>
+<td>pathname</td>
+<td>“/loanOrder/detail”</td>
+<td>设置或返回当前 URL 的路径部分</td>
+</tr>
+<tr>
+<td>port</td>
+<td>“8080”</td>
+<td>设置或返回URL中的端口号，如果URL中没有端口号，则为””</td>
+</tr>
+<tr>
+<td>protocol</td>
+<td>“http:”</td>
+<td>设置或返回当前 URL 的协议，通常是http:或https:</td>
+</tr>
+<tr>
+<td>search</td>
+<td>“?orderId=1236”</td>
+<td>返回URL的查询字符串。这个字符串以”?”开头</td>
+</tr>
+</tbody>
+</table>
+<p>location的8个属性都是可读写的，但是只有href与hash的写才有意义。</p>
+<p>例如改变location.href会重新定位到一个URL，而修改location.hash会跳到当前页面中的锚点(<a id="name">或者<div id="id">等)名字的标记(如果有)，而且页面不会被重新加载。</div></a></p>
+<p>1.查询字符串参数</p>
+<p>function getArgsQuery() {</p>
+<p>​        //取得查询字符串并去掉”?”</p>
+<p>​        var searchStr=window.location.search.length&gt;0?window.location.search.substring(1):””;</p>
+<p>​        //将每一项集成到数组中</p>
+<p>​        var searchStrArray=searchStr.length&gt;0?searchStr.split(“&amp;”):[]; </p>
+<p>​        var args={};</p>
+<p>​        searchStrArray.forEach(function (item) {</p>
+<p>​            //属性</p>
+<p>​            var name=decodeURIComponent(item.split(“=”)[0]);</p>
+<p>​            //值</p>
+<p>​            var value=decodeURIComponent(item.split(“=”)[1]);</p>
+<p>​            args[name]=value;</p>
+<p>​        });</p>
+<p>​        return args; }</p>
+<p>2.改变浏览器的位置</p>
+<p>1) window.location.reload() //重新加载页面</p>
+<p>在调用reload()不传任何参数时，页面自上次请求以来并没有改变过，页面就会从游览器缓存中加载，如果传入参数true时，页面会强制从服务器重新加载。</p>
+<p>例： window.location.reload()  //重新加载（有可能从缓存中加载）</p>
+<p>​       window.location.reload(true) //重新加载(从服务器重新加载)</p>
+<p>2) window.location.assign(url);     //加载新的文档   效果一样的还有</p>
+<p> - window.location.href=url;</p>
+<p> - window.location=url;</p>
+<p>3) window.location.replace(url); //用新文档替换当前文档</p>
+<p>同样是加载新文档，区别就是window.location.assign(url)是可以从新文档再回到当前文档，但是window.location.replace(url)就不行了。</p>
+<p>url中#(hash)的含义</p>
+<p>1.“#”代表网页中的一个位置。其右面的字符，就是该位置的标识符</p>
+<p>比如：http://www.example.com/index.html#print</p>
+<p>就代表网页index.html的print位置。浏览器读取这个URL后，会自动将print位置滚动至可视区域。（单页应用）</p>
+<p>为网页位置指定标识符，有两个方法。一是使用锚点，比如<code>&lt;a name=&quot;print&quot;&gt;&lt;/a&gt;</code></p>
+<p>二是使用id属性，比如<code>&lt;div id=&quot;print&quot; &gt;</code>。</p>
+<p>2.HTTP请求不包括’#’</p>
+<p>‘#’是用来指导浏览器动作的，对服务器端完全无用。所以，HTTP请求中不包括#。</p>
+<p>比如，访问下面的网址，</p>
+<p>http://www.example.com/index.html#print</p>
+<p>浏览器实际发出的请求是这样的：</p>
+<p>GET /index.html HTTP/1.1</p>
+<p>Host: www.example.com</p>
+<p>可以看到，只是请求index.html，根本没有”#print”的部分。</p>
+<ol start="3">
+<li><code>#</code>后的字符不会被发送到服务器端</li>
+</ol>
+<p>在第一个#后面出现的任何字符，都会被浏览器解读为位置标识符。这意味着，这些字符都不会被发送到服务器端。</p>
+<p>比如，下面URL的原意是指定一个颜色值：http://www.example.com/?color=#fff</p>
+<p>但是，浏览器实际发出的请求是：GET /?color= HTTP/1.1         Host: www.example.com</p>
+<p>可以看到，”#fff”被省略了。只有将#转码为%23，浏览器才会将其作为实义字符处理。也就是说，上面的网址应该被写成：http://example.com/?color=%23fff</p>
+<p>4.改变#不触发网页重载</p>
+<p>单单改变#后的部分，浏览器只会滚动到相应位置，不会重新加载网页。</p>
+<p>比如，从http://www.example.com/index.html#location1</p>
+<p>改成http://www.example.com/index.html#location2</p>
+<p>浏览器不会重新向服务器请求index.html。</p>
+<p>5.改变#会改变浏览器的访问历史</p>
+<p>每一次改变#后的部分，都会在浏览器的访问历史中增加一个记录，使用”后退”按钮，就可以回到上一个位置。</p>
+<p>这对于ajax应用程序特别有用，可以用不同的#值，表示不同的访问状态，然后向用户给出可以访问某个状态的链接。</p>
+<p>值得注意的是，上述规则对IE 6和IE 7不成立，它们不会因为#的改变而增加历史记录。</p>
+<p>6.window.location.hash读取#值</p>
+<p>window.location.hash这个属性可读可写。读取时，可以用来判断网页状态是否改变；写入时，则会在不重载网页的前提下，创造一条访问历史记录。</p>
+<p>\7. hashchange事件：监听 url hash 的改变</p>
+<p>这是一个HTML 5新增的事件，当#值发生变化时，就会触发这个事件。IE8+、Firefox 3.6+、Chrome 5+、Safari 4.0+支持该事件。</p>
+<p>window.addEventListener(‘hashchange’, function(e) { //事件处理   })</p>
+<p>对于不支持onhashchange的浏览器，可以用setInterval监控location.hash的变化。</p>
+<p>数组去重</p>
+<p>双循环</p>
+<p>sort排序后去重 单循环</p>
+<p>indexof</p>
+<p>对象属性去重</p>
+<p>set和解构赋值 return […new Set(arr)]</p>
+<p>Array.from和set   Array.from(new Set(arr))</p>
+<p>0.1+0.2 !== 0.3      0.3 / 0.1===2.9999999999999996以及0.7 * 180==125.99999999998</p>
+<p>Number类型遵循了IEEE754-2008中的64位浮点数规则定义的小数后的有效位数至多为52位导致计算出现精度丢失问题！不区分整数和浮点数，都是用64位浮点数的形式储存</p>
+<p>原因是JS中的Number类型，二进制小数的有效位数只有52位，从0到51位（包括边界）</p>
+<p>解决方法：</p>
+<p>1.引入类库require               math.js    big.js</p>
+<p>2.原生方法    Number.prototype.toFixed()</p>
+<p>在判断浮点数运算结果前对计算结果进行精度缩小，因为在精度缩小的过程总会自动四舍五入</p>
+<p>toFixed() 方法使用定点表示法来格式化一个数，会对结果进行四舍五入。语法为：</p>
+<p>numObj.toFixed(digits)</p>
+<p>参数 digits 表示小数点后数字的个数；介于 0 到 20 （包括）之间，实现环境可能支持更大范围。如果忽略该参数，则默认为 0。</p>
+<p>返回一个数值的字符串表现形式，不使用指数记数法，而是在小数点后有 digits 位数字。该数值在必要时进行四舍五入，另外在必要时会用 0 来填充小数部分，以便小数部分有指定的位数。 如果数值大于 1e+21，该方法会简单调用 Number.prototype.toString()并返回一个指数记数法格式的字符串。</p>
+<p>特别注意：toFixed() 返回一个数值的字符串表现形式。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/20/ES6/" rel="next" title="ES6">
+                <i class="fa fa-chevron-left"></i> ES6
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/head.jpeg" alt="lengty">
+            
+              <p class="site-author-name" itemprop="name">lengty</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lengty</span>
+
+  
+
+  
+</div>
+
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=6.6.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=6.6.0"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
