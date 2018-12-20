@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.6.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=6.6.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png?v=6.6.0">
+
+
+  <link rel="mask-icon" href="/images/favicon.png?v=6.6.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="CSS动画实现@keyframes：form、to来表示一个动画从哪里开始到哪里结束，相当于我们的另外一种表示方式0%到100%，中间可以添加不同关键帧来写我们想要的变化过程，注意0%不能报百分符号省略到 123456789101112//Firefox:@-moz-keyframes。Opera:@-o-keyframes。Safari和Chrome的是 @-webkit-keyframes@k">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS面试整理">
+<meta property="og:url" content="http://yoursite.com/2018/12/20/CSS面试整理/index.html">
+<meta property="og:site_name" content="自言自语">
+<meta property="og:description" content="CSS动画实现@keyframes：form、to来表示一个动画从哪里开始到哪里结束，相当于我们的另外一种表示方式0%到100%，中间可以添加不同关键帧来写我们想要的变化过程，注意0%不能报百分符号省略到 123456789101112//Firefox:@-moz-keyframes。Opera:@-o-keyframes。Safari和Chrome的是 @-webkit-keyframes@k">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/0069RVTdly1fu4w5l1zsvj30b40863yw.jpg">
+<meta property="og:updated_time" content="2018-12-20T10:41:59.862Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS面试整理">
+<meta name="twitter:description" content="CSS动画实现@keyframes：form、to来表示一个动画从哪里开始到哪里结束，相当于我们的另外一种表示方式0%到100%，中间可以添加不同关键帧来写我们想要的变化过程，注意0%不能报百分符号省略到 123456789101112//Firefox:@-moz-keyframes。Opera:@-o-keyframes。Safari和Chrome的是 @-webkit-keyframes@k">
+<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/0069RVTdly1fu4w5l1zsvj30b40863yw.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/20/CSS面试整理/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>CSS面试整理 | 自言自语</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion .logo-line-before i { left: initial; }
+    .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">自言自语</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+    
+  
+  
+
+  
+
+  <article class="post post-type-normal true" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/20/CSS面试整理/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lengty">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="自言自语">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CSS面试整理
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-20 18:41:52 / 修改时间：18:41:59" itemprop="dateCreated datePublished" datetime="2018-12-20T18:41:52+08:00">2018-12-20</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h5 id="CSS动画"><a href="#CSS动画" class="headerlink" title="CSS动画"></a>CSS动画</h5><p>实现@keyframes：form、to来表示一个动画从哪里开始到哪里结束，相当于我们的另外一种表示方式0%到100%，中间可以添加不同关键帧来写我们想要的变化过程，注意0%不能报百分符号省略到</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//Firefox:@-moz-keyframes。Opera:@-o-keyframes。Safari和Chrome的是 @-webkit-keyframes</span><br><span class="line">@keyframes mymove&#123;</span><br><span class="line">	from &#123;background-position: 0 0;&#125;</span><br><span class="line">	to &#123;background-position: -1080px 0;&#125;</span><br><span class="line">&#125;</span><br><span class="line">@keyframes mymove&#123;</span><br><span class="line">	0% &#123;background-position: 0 0;&#125;</span><br><span class="line">	30% &#123;background-position: -360px 0;&#125;</span><br><span class="line">	60% &#123;background-position: -720px 0;&#125;</span><br><span class="line">	90% &#123;background-position: -1080px 0;&#125;</span><br><span class="line">	100% &#123;background-position: 0 0;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>关于animation相关的几个属性的用法：</p>
+<p>1、animation-name： 用来定义一个动画的名称</p>
+<p>语法： animation-name: none | mymove |多个名字;</p>
+<p>none为默认值，当属性值是none时，表示没有任何的动画效果。</p>
+<p>mymove是由Keyframes创建的动画名 mymove要和Keyframes中的mymove一致，如果不一致,将不能实现任何动画效果；当我们同时给animation添加几个动画的时候，我们只需要用逗号“，”隔开就可以。</p>
+<p>2、animation-duration ：指定元素播放动画所持续的时间长</p>
+<p>语法： animation-duration: 0 | time</p>
+<p>time：为数值，单位为秒S，他的默认值为“0”。这个属性跟transition中的transition-duration使用方法是一样的</p>
+<p>3、animation-delay： 指定元素动画什么时间开始</p>
+<p>语法： animation-delay: time；</p>
+<p>time：表示的是时间，单位是秒S，默认数值是0。</p>
+<p>4、animation-iteration-count： 指定元素播放动画的循环次数</p>
+<p>语法： animation-iteration-count: value|infinite；</p>
+<p>属性值是1时，是默认值，当属性值是infinite表示的意思是无限循环的。</p>
+<p>5、animation-direction：指定元素动画播放的方向</p>
+<p>语法： animation-direction: normal|reverse|alternate|alternate-reverse</p>
+<p>normal：动画的运动形式是正常的，这是默认值。</p>
+<p>reverse：动画的播放形式是反向的。</p>
+<p>alternate： 动画在奇数次（1、3、5…）正向播放，在偶数次（2、4、6…）反向播放。</p>
+<p>alternate-reverse：动画在奇数次（1、3、5…）反向播放，在偶数次（2、4、6…）正向播放。</p>
+<p>6、animation-timing-function：动画的播放方式</p>
+<p>语法： animation-timing-function: ease|ease-in|ease-in-out|linear|cubic-bezier(n,n,n,n)；</p>
+<p>linear：动画运动的开始和结尾都是匀速的。</p>
+<p>ease：默认。动画刚开始的时候速度是慢的，然后加快，最后变慢</p>
+<p>ease-in：动画从慢的速度开始。</p>
+<p>ease-out：动画从慢的速度结尾。</p>
+<p>ease-in-out 动画的开始和结尾都是慢的。</p>
+<p>cubic-bezier(n,n,n,n) 在 http:cubic-bezier.com网址当中可以设置自己需要的运动方式</p>
+<p>step-start  动画运动的时候从最左边的端点为开始点</p>
+<p>step-end 动画运动的时候从最后的端点作为开始点，这个是默认值</p>
+<p>7、animation-fill-mode ：当动画不播放时，要应用到元素的样式</p>
+<p>语法： animation-fill-mode: none|forwards|backwards</p>
+<p>none：默认值</p>
+<p>forwards：在动画结束后，动画停留在结束的位置</p>
+<p>backwards 在动画结束后，动画回到最初的位置</p>
+<h5 id="HTML5动画API-requestAnimationFrame"><a href="#HTML5动画API-requestAnimationFrame" class="headerlink" title="HTML5动画API-requestAnimationFrame"></a>HTML5动画API-requestAnimationFrame</h5><p>使用requestAnimationFrame有什么好处？<br>浏览器可以优化并行的动画动作，更合理的重新排列动作序列，并把能够合并的动作放在一个渲染周期内完成，从而呈现出更流畅的动画效果。比如，通过requestAnimationFrame()，JS动画能够和CSS动画/变换或SVG SMIL动画同步发生。另外，如果在一个浏览器标签页里运行一个动画，当这个标签页不可见时，浏览器会暂停它，这会减少CPU，内存的压力。</p>
+<p>不过有一点需要注意，requestAnimationFrame是在主线程上完成。这意味着，如果主线程非常繁忙，requestAnimationFrame的动画效果会大打折扣。</p>
+<p>与setTimeout相比，requestAnimationFrame最大的优势是<strong>由系统来决定回调函数的执行时机。</strong>具体一点讲就是，<strong>系统每次刷新之前会主动调用requestAnimationFrame中的回调函数</strong>，如果系统刷新率是60Hz,那么回调函数就每16.7ms被执行一次，如果刷新率是75Hz，那么这个间隔时间就变成了1000/75=13.3ms。换句话说就是，requestAnimationFrame的步伐跟着系统的刷新步伐走。<strong>它能保证回调函数在屏幕每一次的刷新间隔中只被执行一次</strong>，这样就不会引起丢帧现象，也不会导致动画出现卡顿的问题。</p>
+<p><strong>window.requestAnimationFrame()</strong> 方法告诉浏览器您希望执行动画并请求浏览器在下一次重绘之前调用指定的函数来更新动画。该方法使用一个回调函数作为参数，这个回调函数会在浏览器重绘之前调用。</p>
+<p>回调函数会被传入一个参数，指示requestAnimationFrame() 开始触发回调函数的当前时间。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">  //-webkit-　　　chrome、safari</span><br><span class="line">  //-moz-　　　　　firefo</span><br><span class="line">  //-ms-         IE10</span><br><span class="line">  //-o-          opera</span><br><span class="line">window.requestAnimFrame = (function()&#123;	</span><br><span class="line">  return window.requestAnimationFrame ||</span><br><span class="line">      window.webkitRequestAnimationFrame ||</span><br><span class="line">      window.mozRequestAnimationFrame ||</span><br><span class="line">      window.oRequestAnimationFrame ||</span><br><span class="line">      window.msRequestAnimationFrame ||</span><br><span class="line">      function(callback) &#123; //1秒钟60次（大约每16.7毫秒一次）</span><br><span class="line">        window.setTimeout(callback, 1000 / 60);</span><br><span class="line">      &#125;;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>使用requestAnimationFrame的时候，只需反复调用它即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function repeatOften() &#123;</span><br><span class="line">  // Do whatever</span><br><span class="line">  window.requestAnimationFrame(repeatOften);</span><br><span class="line">&#125;</span><br><span class="line">window.requestAnimationFrame(repeatOften);</span><br><span class="line">---------------------------------------------</span><br><span class="line">(function animloop() &#123;</span><br><span class="line">    render();//Do whatever</span><br><span class="line">    requestAnimFrame(animloop);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var e = document.getElementById(&quot;e&quot;);</span><br><span class="line">  var flag = true;</span><br><span class="line">  var left = 0;</span><br><span class="line">  function render() &#123;</span><br><span class="line">    left === 0 ? flag = true : left === 500 ? flag = false : &quot;&quot;;</span><br><span class="line">    flag ? e.style.left = `$&#123;left++&#125;px` :</span><br><span class="line">      e.style.left = `$&#123;left--&#125;px`;</span><br><span class="line">  &#125;</span><br><span class="line">  render()</span><br><span class="line">  e.onclick = function() &#123;</span><br><span class="line">    (function animloop() &#123;</span><br><span class="line">      render();</span><br><span class="line">      requestAnimFrame(animloop);</span><br><span class="line">    &#125;)();</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>cancelAnimationFrame方法用于取消重绘。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">requestID = window.requestAnimationFrame()；</span><br><span class="line">window.cancelAnimationFrame(requestID);</span><br></pre></td></tr></table></figure>
+<h5 id="JavaScript动画API"><a href="#JavaScript动画API" class="headerlink" title="JavaScript动画API"></a>JavaScript动画API</h5><p>第一个参数，keyframes应该是一个对象数组。每个对象都是我们动画中的一个keyframe。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var options = &#123;</span><br><span class="line">  iterations: Infinity,</span><br><span class="line">  iterationStart: 0,</span><br><span class="line">  delay: 0,</span><br><span class="line">  endDelay: 0,</span><br><span class="line">  direction: &apos;alternate&apos;,</span><br><span class="line">  duration: 700,</span><br><span class="line">  fill: &apos;forwards&apos;,</span><br><span class="line">  easing: &apos;ease-out&apos;,</span><br><span class="line">&#125;</span><br><span class="line">element.animate(keyframes, options);</span><br></pre></td></tr></table></figure>
+<p>对于我们熟悉CSS动画的人来说，options一些术语与我们习惯的不同。</p>
+<ul>
+<li><p>是easing而不是animation-timing-function</p>
+</li>
+<li><p>是iterations而不是animation-iteration-count。如果我们希望动画永远重复，是Infinity而不是infinite的。有点混乱，无限不是引用。Infinity是一个JavaScript关键字，而其他值是字符串。</p>
+</li>
+<li><p>我们使用毫秒而不是秒，对于之前编写过许多JavaScript的人来说，这应该是熟悉的。（你可以在CSS动画中使用毫秒数，但很少有人使用。)</p>
+</li>
+</ul>
+<p>动画对象：.animate()方法不仅仅是动画我们的元素，它也返回一个动画对象。</p>
+<p>getAnimations（）方法将返回任何动画对象的数组。即使一个DOM元素只有一个动画应用到它，getAnimations()将始终返回一个数组。我们来抓住那个单一的动画对象来处理。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var h2 = document.querySelector(&quot;h2&quot;);</span><br><span class="line">var myCSSAnimation = h2.getAnimations()[0];</span><br></pre></td></tr></table></figure>
+<p>WAAPI为我们提供了两项活动和promises的选择。.finished我们的动画对象的属性将返回在动画结束时解决的promise。以下是上面的例子，就像使用promise一样：myAnimation.finished.then(() =&gt;  element.remove())</p>
+<p>Promise.all希望有一系列的promises，一旦所有这些promises得到解决，只会运行我们的回调函数。我们已经看到，element.getAnimations()返回一个动画对象数组。我们可以将数组中的所有动画对象映射到每个动画对象.finished上，为我们提供所需的一系列承诺。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Promise.all(document.getAnimations().map(animation =&gt; </span><br><span class="line">  animation.finished)).then(function() &#123;           </span><br><span class="line">    // do something cool </span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="CSS新特性"><a href="#CSS新特性" class="headerlink" title="CSS新特性"></a>CSS新特性</h5><ol>
+<li><p>颜色：新增RGBA，HSLA模式</p>
+</li>
+<li><p>文字阴影（text-shadow）文字折行（word-wrap）</p>
+</li>
+<li><p>边框： 圆角（border-radius）边框阴影： box-shadow</p>
+</li>
+<li><p>盒子模型：box-sizing</p>
+</li>
+<li><p>背景：background-size 设置背景图片的尺寸background-origin 设置背景图片的原点background-clip 设置背景图片的裁切区域，以”，”分隔可以设置多背景，用于自适应布局</p>
+</li>
+<li><p>渐变：linear-gradient、radial-gradient</p>
+</li>
+<li><p>过渡：transition，可实现动画</p>
+</li>
+<li><p>自定义动画</p>
+</li>
+<li><p>在CSS3中唯一引入的伪元素是 ：selection.</p>
+</li>
+<li><p>媒体查询，多栏布局</p>
+</li>
+<li><p>border-image</p>
+</li>
+<li><p>2D转换transform：对元素进行移动、缩放、转动、拉长或拉伸</p>
+<p>translate(x，y)移动 rotate(顺时针旋转角度) skew(围绕x，y轴旋转角度) scale(x，y)缩放</p>
+</li>
+<li><p>3D转换</p>
+<ul>
+<li>rotateX()：元素围绕其 X 轴以给定的度数进行旋转。transform：rotateX(120deg)</li>
+<li>rotateY()：元素围绕其 Y 轴以给定的度数进行旋转。transform：rotateY(120deg)</li>
+</ul>
+</li>
+</ol>
+<p><strong>CSS3新增伪类有那些？</strong></p>
+<blockquote>
+<p>p:first-of-type 选择属于其父元素的首个元素</p>
+<p>p:last-of-type 选择属于其父元素的最后元素</p>
+<p>p:nth-child(2) 选择属于其父元素的第二个子元素</p>
+<p>p:nth-last-child(n)    ……………………………………….从最后一个子元素开始计数</p>
+<p>p:nth-of-type(n)　  选择其父元素的n个元素</p>
+<p>p:nth-last-of-type(n)   ……………………从最后一个子元素开始计数</p>
+<p>:enabled、:disabled 控制表单控件的禁用状态。</p>
+<p>:checked，单选框或复选框被选中。</p>
+</blockquote>
+<p><strong>如何区分 HTML 和 HTML5？</strong></p>
+<p>新特性：</p>
+<ol>
+<li>拖拽释放(Drag and drop) API</li>
+<li>语义化更好的内容标签（header,nav,footer,aside,article,section）</li>
+<li>音频、视频API(audio,video)</li>
+<li>画布(Canvas) API</li>
+<li>地理(Geolocation) API</li>
+<li>本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失；</li>
+<li>sessionStorage 的数据在浏览器关闭后自动删除</li>
+<li>表单控件，calendar、date、time、email、url、search</li>
+<li>新的技术webworker, websocket, Geolocation支持HTML5新标签</li>
+</ol>
+<h5 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h5><p><img src="https://ws3.sinaimg.cn/large/0069RVTdly1fu4w5l1zsvj30b40863yw.jpg" alt=""></p>
+<p>IE模型和标准模型唯一的区别是内容计算方式的不同：</p>
+<p><strong>标准模型元素宽度width=content</strong>，高度计算相同</p>
+<p><strong>IE模型元素宽度width=content+padding+border</strong>，高度计算相同</p>
+<p>通过css3新增的属性 box-sizing: content-box | border-box分别设置盒模型为标准模型（content-box）和IE模型（border-box）。</p>
+<h6 id="javascript如何设置获取盒模型对应的宽和高"><a href="#javascript如何设置获取盒模型对应的宽和高" class="headerlink" title="javascript如何设置获取盒模型对应的宽和高"></a>javascript如何设置获取盒模型对应的宽和高</h6><ul>
+<li>dom.style.width/height 只能取到行内样式的宽和高，style标签中和link外链的样式取不到。</li>
+<li>dom.currentStyle.width/height 取到的是最终渲染后的宽和高，只有IE支持此属性。</li>
+<li>window.getComputedStyle(dom).width/height 同（2）但是多浏览器支持，IE9以上支持。</li>
+<li>dom.getBoundingClientRect().width/height 也是得到渲染后的宽和高，大多浏览器支持。IE9以上支持，除此外还可以取到相对于视窗的上下左右的距离</li>
+</ul>
+<p>单位：</p>
+<ul>
+<li>百分比：百分比的参照物是父元素，50%相当于父元素width的50%</li>
+<li>rem：这个对于复杂的设计图相当有用，它是html的font-size的大小</li>
+<li>em：它虽然也是一个相对的单位，相对于父元素的font-size，</li>
+</ul>
+<h5 id="BFC-Block-Formatting-Context-：块级格式化上下文。"><a href="#BFC-Block-Formatting-Context-：块级格式化上下文。" class="headerlink" title="BFC(Block Formatting Context)：块级格式化上下文。"></a><strong>BFC(Block Formatting Context)</strong>：块级格式化上下文。</h5><p>BFC决定了元素如何对其内容进行定位，以及与其他元素的关系和相互作用。当设计可视化布局时，BFC提供了一个环境，HTML元素在这个环境中按照一定的规则进行布局。一个环境中的元素不会影响到其他环境中的布局。</p>
+<p><strong>BFC的原理（渲染规则）</strong></p>
+<ol>
+<li>BFC元素垂直方向的边距会发生重叠。属于不同BFC外边距不会发生重叠。</li>
+<li>BFC的区域不会与浮动元素的布局重叠。</li>
+<li>BFC元素是一个独立的容器，外面的元素不会影响里面的元素。里面的元素也不会影响外面的元素。</li>
+<li>计算BFC高度的时候，浮动元素也会参与计算(清除浮动)</li>
+</ol>
+<p><strong>如何创建BFC</strong></p>
+<ol>
+<li>overflow不为visible;</li>
+<li>float的值不为none；</li>
+<li>position的值为absolute或fixed；</li>
+<li>display属性为inline-blocks,table,table-cell,table-caption,flex,inline-flex;</li>
+</ol>
+<h5 id="两栏布局"><a href="#两栏布局" class="headerlink" title="两栏布局"></a>两栏布局</h5><p>1.浮动布局：左侧栏固定宽度向左浮动，右侧主要内容则用margin-left留出左侧栏的宽度，默认宽度为auto，自动填满剩下的宽度。但要保证浮动的div先布局，div写在最前面。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id = &quot;aside&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div id = &quot;main&quot;&gt;&lt;/div&gt;</span><br><span class="line">div&#123;</span><br><span class="line">  height:500px;</span><br><span class="line">&#125;</span><br><span class="line">#aside&#123;</span><br><span class="line">  width:300px;</span><br><span class="line">  background-color:yellow;</span><br><span class="line">  float:left;</span><br><span class="line">&#125;</span><br><span class="line">#main&#123;</span><br><span class="line">  background-color:aqua;</span><br><span class="line">  margin-left:300px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>右侧固定宽度，左侧自适应则是同理，只要将固定栏右浮动，使用margin-right空出其宽度即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#aside&#123;</span><br><span class="line">  width:300px;</span><br><span class="line">  background-color:yellow;</span><br><span class="line">  float:right;</span><br><span class="line">&#125;</span><br><span class="line">#main&#123;</span><br><span class="line">  background-color:aqua;</span><br><span class="line">  margin-right:300px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.浮动布局+负外边距（双飞翼布局的两栏版）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id = &quot;aside&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div id = &quot;main&quot;&gt;</span><br><span class="line">  &lt;div id = &quot;content&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">div&#123;</span><br><span class="line">  height:500px;</span><br><span class="line">&#125;</span><br><span class="line">#aside&#123;</span><br><span class="line">  width:300px;</span><br><span class="line">  background-color:yellow;</span><br><span class="line">  float:left;</span><br><span class="line">  margin-right:-100%;</span><br><span class="line">&#125;</span><br><span class="line">#main&#123;</span><br><span class="line">  width:100%;</span><br><span class="line">  float:left;</span><br><span class="line">&#125;</span><br><span class="line">#content&#123;</span><br><span class="line">  margin-left:300px;</span><br><span class="line">  background-color:aqua;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>左侧固定栏指定一个右侧的100%的负外边距，为整个屏幕的宽度，这就使得main的最左侧可以与屏幕最左侧对齐。</li>
+<li>此时main的宽度是100%，因此需要为其子内容content指定一个左侧的外边距用于空出左侧栏的位置，即左侧栏的宽度300px</li>
+</ul>
+<p>3.flex</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#content &#123;</span><br><span class="line">        display: flex;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    .left &#123;</span><br><span class="line">        background-color: yellow;</span><br><span class="line">        height: 200px;</span><br><span class="line">        flex: 1;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    .right &#123;</span><br><span class="line">        background-color: aqua;</span><br><span class="line">        height: 200px;</span><br><span class="line">        width: 100px;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div id=&quot;content&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;left&quot;&gt;left&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;right&quot;&gt;right&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="三栏布局"><a href="#三栏布局" class="headerlink" title="三栏布局"></a>三栏布局</h5><p>1.绝对定位：左右侧分别用绝对定位固定，中间栏则利用margin-left和margin-right空出左右栏位置。</p>
+<p>2.<strong>浮动定位法</strong><br>分别另左侧栏和右侧栏向左和向右浮动，中间栏放在最后，再利用左右外边距空出左右栏的位置即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;left&quot;&gt;left&lt;/div&gt;   &lt;!--左右侧栏的位置可以更改--&gt;</span><br><span class="line">&lt;div id=&quot;right&quot;&gt;right&lt;/div&gt;</span><br><span class="line">&lt;div id=&quot;main&quot;&gt;main&lt;/div&gt;   &lt;!--中间栏放最后--&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">    #left&#123;</span><br><span class="line">        width:300px;</span><br><span class="line">        background-color:yellow;</span><br><span class="line">        float:left;</span><br><span class="line">    &#125;</span><br><span class="line">    #right&#123;</span><br><span class="line">        width:200px;</span><br><span class="line">        background-color:orange;</span><br><span class="line">        float:right;</span><br><span class="line">    &#125;</span><br><span class="line">    #main&#123;</span><br><span class="line">        background-color:aqua;</span><br><span class="line">        margin-left:300px;</span><br><span class="line">        margin-right:200px;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p>3.<strong>浮动+负外边距（双飞翼布局）</strong></p>
+<ul>
+<li><strong>三个栏都采用左浮动</strong>；</li>
+<li><strong>中间栏的div写在最前面</strong>，宽度为100%</li>
+<li>左侧栏也是左浮动，默认情况下由于前面的中间栏div占据了100%，因此这个左侧栏是在中间栏下方一行的。为左侧栏设置margin-left:-100%，即整个屏幕的宽度100%，这就令左侧栏跑到了中间栏的最左侧。</li>
+<li>右侧栏也是左浮动，此时默认情况下也是在中间栏下方一行的，同样利用margin-left:-300px，即其自身的宽度，使其到上一行最右侧的位置。</li>
+<li>中间栏的内容部分则需要利用分别等于左右侧栏宽度的外边距来空出它们的位置。</li>
+</ul>
+<p>这种方法的好处就是主体main在前面，可以先加载主题内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;main&quot;&gt;	</span><br><span class="line">    &lt;div id=&quot;content&quot;&gt;content&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div id=&quot;left&quot;&gt;left&lt;/div&gt;</span><br><span class="line">&lt;div id=&quot;right&quot;&gt;right&lt;/div&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">    #main&#123;</span><br><span class="line">        background-color:aqua;</span><br><span class="line">        width:100%;</span><br><span class="line">        float:left;</span><br><span class="line">    &#125;</span><br><span class="line">    #left&#123;</span><br><span class="line">        width:200px;</span><br><span class="line">        background-color:yellow;</span><br><span class="line">        float:left;</span><br><span class="line">        margin-left:-100%;</span><br><span class="line">    &#125;</span><br><span class="line">    #right&#123;</span><br><span class="line">        width:300px;</span><br><span class="line">        background-color:orange;</span><br><span class="line">        float:left;</span><br><span class="line">        margin-left:-300px; //自身width</span><br><span class="line">    &#125;</span><br><span class="line">    #content&#123;</span><br><span class="line">        margin-left:200px;</span><br><span class="line">        margin-right:300px;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p>4.圣杯布局</p>
+<p>两边固定宽度，中间自适应的三栏布局，其中，中间栏放到文档流前面，保证先行渲染。三栏全部float:left浮动，并配合left和right属性。</p>
+<ul>
+<li>三栏都向左浮动，center的宽度为100%，left的margin-left为-100%，right的margin-left为其自身宽度的负值。 但此时左右边栏实际上是在center上方的，会遮盖center内容。</li>
+<li>为container设置一个左右的padding，分别为left和right的宽度。此时整体都是向中间压缩的</li>
+<li>对left与right使用position:relative，分别设置left：-自身宽度和right：-自身宽度使其相对现在的位置分别向左、向右移动，从而占据container利用padding空出来的位置。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;container&quot;&gt;</span><br><span class="line">    &lt;div id=&quot;center&quot; class=&quot;column&quot;&gt;#center&lt;/div&gt;</span><br><span class="line">    &lt;div id=&quot;left&quot; class=&quot;column&quot;&gt;#left&lt;/div&gt;</span><br><span class="line">    &lt;div id=&quot;right&quot; class=&quot;column&quot;&gt;#right&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">    .column &#123;</span><br><span class="line">        float: left;</span><br><span class="line">        height: 100px;</span><br><span class="line">    &#125;</span><br><span class="line">    #center &#123;</span><br><span class="line">        background-color: #1fc195;</span><br><span class="line">        width: 100%;</span><br><span class="line">    &#125;</span><br><span class="line">    #left &#123;</span><br><span class="line">        width: 200px;</span><br><span class="line">        background-color: yellow;</span><br><span class="line">        margin-left: -100%;</span><br><span class="line">        position: relative;</span><br><span class="line">        left: -200px;</span><br><span class="line">    &#125;</span><br><span class="line">    #right &#123;</span><br><span class="line">        width: 300px;</span><br><span class="line">        background-color: aqua;</span><br><span class="line">        margin-left: -300px;</span><br><span class="line">        position: relative;</span><br><span class="line">        right: -300px;</span><br><span class="line">    &#125;</span><br><span class="line">    #container&#123;</span><br><span class="line">        padding: 0 300px 0 200px;</span><br><span class="line">        height: 100px;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p>5.flex</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;container&quot;&gt;</span><br><span class="line">    &lt;div id=&quot;left&quot; class=&quot;column&quot;&gt;#left&lt;/div&gt;</span><br><span class="line">    &lt;div id=&quot;center&quot; class=&quot;column&quot;&gt;#center&lt;/div&gt;</span><br><span class="line">    &lt;div id=&quot;right&quot; class=&quot;column&quot;&gt;#right&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">#container&#123;</span><br><span class="line">    display: flex;</span><br><span class="line">&#125;</span><br><span class="line">#left&#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    background-color: yellow;</span><br><span class="line">&#125;</span><br><span class="line">#center&#123;</span><br><span class="line">    width: 100%;</span><br><span class="line">    background-color: #1fc195;</span><br><span class="line">&#125;</span><br><span class="line">#right&#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    background-color: aqua;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="水平垂直居中"><a href="#水平垂直居中" class="headerlink" title="水平垂直居中"></a>水平垂直居中</h5><p>水平居中</p>
+<ol>
+<li><p>设置元素为文本或者图片等行内元素时，可以通过text-align:center实现。</p>
+</li>
+<li><p>当设置的元素为块状元素时，text-align:center就不起作用了，这时候分两种情况：<br>1) 定宽块状元素<br>通过设置左右 margin 为 auto 即可实现：margin:0 auto;</p>
+<p>2) 不定宽块状元素<br>设置 display:inline 方法，然后 text-align:center 实现。显示类型设为行内元素；<br>设置 position:absolute 和 left 50%，将元素左偏移50%；</p>
+<p>设置父元素display:flex;    justify-content:center;</p>
+</li>
+</ol>
+<p>垂直居中</p>
+<p>1.父元素确定高度的单行文本，通过设置 line-height 与 height 相同的值即可完成。 </p>
+<p>line-height 与 font-size 的计算之差，在 CSS 中称为“行间距”，分为两半，分别加到一个文本内容的顶部和底部。<br>缺点：当文字内容的长度大于块的宽时，就有内容脱离了块。</p>
+<p><strong>height:20px;line-height:20px</strong></p>
+<p>2.父元素高度确定的块<br>1) 使用 padding-top 和 padding-bottom 来居中。 </p>
+<p>利用父元素高度减去文本高度，所得的值平分到 top bottom，达到居中的目的。</p>
+<p>或父元素设置为：position: relative; 子元素设置为：position: absolute; left: 50%; top: 50%;</p>
+<p>​                然后子元素margin: -自身高一半 0  0 -自身宽一半</p>
+<p>​                或margin替换为：<strong>transform: translate(-50%,-50%);</strong> </p>
+<p>2) 设置 vertical-align:middle (在父元素设置此样式时，会对 inline-block) 类型的子元素都有用。</p>
+<p>​    第一种方法：.parent{display:table-cell;  vertical-align:middle;  height:20px;}<br>​    第二种方法：.parent{display:inline-block;  vertical-align:middle;  line-height:20px;} </p>
+<p>在 chrome firefox IE8 以上的浏览器下可以设置块级元素的 display 为 table-cell (设置为表格单元显示)，激活 vertical-align 属性，但 IE6 IE7 并不支持。 </p>
+<p>优点：不用加多余的无意义的标签<br>缺点：兼容性差，且修改了 display 的 block 变成了 table-cell，破坏了原有的块状元素的性质。</p>
+<p>4) flex：.parent{display:flex;  align-items:center;} </p>
+<h5 id="清楚浮动的几种方式"><a href="#清楚浮动的几种方式" class="headerlink" title="清楚浮动的几种方式"></a>清楚浮动的几种方式</h5><p>浮动带来的问题：</p>
+<ol>
+<li>父元素的高度无法被撑开，影响与父元素同级的元素</li>
+<li>与浮动元素同级的非浮动元素（内联元素）会跟随其后</li>
+<li>若非第一个元素浮动，则该元素之前的元素也需要浮动，否则会影响页面显示的结构。</li>
+</ol>
+<p>清除浮动的方式：</p>
+<ol>
+<li><p>父级div定义height</p>
+</li>
+<li><p>最后一个浮动元素后加空div标签 并添加样式clear:both。</p>
+</li>
+<li><p>包含浮动元素的父标签添加样式overflow为hidden或auto。</p>
+<p>overflow:hidden有一个特点，会将超出的部分隐藏起来，auto超出会出现滚动条。</p>
+</li>
+<li><p>包含浮动元素的父级div使用伪元素来清除浮动：尽量选择此种方式</p>
+</li>
+</ol>
+<p>IE8以上和非IE浏览器才支持:after，zoom(IE转有属性)可解决ie6,ie7浮动问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:after&#123;</span><br><span class="line">	content:&quot;&quot;;//设置内容为空</span><br><span class="line">	height:0;//高度为0</span><br><span class="line">	line-height:0;//行高为0</span><br><span class="line">	display:block;//将文本转为块级元素</span><br><span class="line">	visibility:hidden;//将元素隐藏</span><br><span class="line">	clear:both//清除浮动</span><br><span class="line">&#125;</span><br><span class="line">.clearfix&#123;</span><br><span class="line">	zoom:1;//为了兼容IE</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用双伪元素清除浮动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:before,.clearfix:after &#123;</span><br><span class="line">	content: &quot;&quot;;</span><br><span class="line">	display: block;</span><br><span class="line">    clear: both;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix &#123;</span><br><span class="line">	zoom: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/20/浏览器缓存 下午6.43.58/" rel="next" title="浏览器缓存">
+                <i class="fa fa-chevron-left"></i> 浏览器缓存
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/head.jpeg" alt="lengty">
+            
+              <p class="site-author-name" itemprop="name">lengty</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#CSS动画"><span class="nav-number">1.</span> <span class="nav-text">CSS动画</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HTML5动画API-requestAnimationFrame"><span class="nav-number">2.</span> <span class="nav-text">HTML5动画API-requestAnimationFrame</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JavaScript动画API"><span class="nav-number">3.</span> <span class="nav-text">JavaScript动画API</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CSS新特性"><span class="nav-number">4.</span> <span class="nav-text">CSS新特性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#盒模型"><span class="nav-number">5.</span> <span class="nav-text">盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#javascript如何设置获取盒模型对应的宽和高"><span class="nav-number">5.1.</span> <span class="nav-text">javascript如何设置获取盒模型对应的宽和高</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#BFC-Block-Formatting-Context-：块级格式化上下文。"><span class="nav-number">6.</span> <span class="nav-text">BFC(Block Formatting Context)：块级格式化上下文。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#两栏布局"><span class="nav-number">7.</span> <span class="nav-text">两栏布局</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#三栏布局"><span class="nav-number">8.</span> <span class="nav-text">三栏布局</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#水平垂直居中"><span class="nav-number">9.</span> <span class="nav-text">水平垂直居中</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清楚浮动的几种方式"><span class="nav-number">10.</span> <span class="nav-text">清楚浮动的几种方式</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lengty</span>
+
+  
+
+  
+</div>
+
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.6.0"></script>
+
+  <script src="/js/src/motion.js?v=6.6.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=6.6.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=6.6.0"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
