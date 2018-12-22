@@ -104,28 +104,37 @@
 
 
 
-  <meta name="description" content="浏览器缓存浏览器的缓存问题，主要指的是http的缓存——即协议层。而h5新增的storage和数据库缓存，那是应用层缓存，并不被计入本篇的分析内容里面。下面我们正式开始来进行缓存的分析。 协议层的缓存，其实，可以被分成强制缓存和对比缓存 强制缓存 只有当缓存失效时，才会去服务器获取最新资源的方式，就是强制缓存。而在协议层的字段中，可以造成强制缓存的字段有两个Expires和Cache-Contro">
+  <meta name="description" content="HTTPxhr.status=200             statusText = ‘OK’         xhr.readyState = 4 返回结果的HTTP状态码：状态码告知从服务器返回的请求结果 1xx        信息型状态码            接收的请求正在处理 2xx        成功型状态码            请求正常处理完毕 3xx        重定向状态码">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浏览器缓存">
-<meta property="og:url" content="http://yoursite.com/2018/12/20/浏览器缓存 下午6.43.58/index.html">
+<meta property="og:title" content="HTTP">
+<meta property="og:url" content="http://yoursite.com/2018/12/22/HTTP/index.html">
 <meta property="og:site_name" content="自言自语">
-<meta property="og:description" content="浏览器缓存浏览器的缓存问题，主要指的是http的缓存——即协议层。而h5新增的storage和数据库缓存，那是应用层缓存，并不被计入本篇的分析内容里面。下面我们正式开始来进行缓存的分析。 协议层的缓存，其实，可以被分成强制缓存和对比缓存 强制缓存 只有当缓存失效时，才会去服务器获取最新资源的方式，就是强制缓存。而在协议层的字段中，可以造成强制缓存的字段有两个Expires和Cache-Contro">
+<meta property="og:description" content="HTTPxhr.status=200             statusText = ‘OK’         xhr.readyState = 4 返回结果的HTTP状态码：状态码告知从服务器返回的请求结果 1xx        信息型状态码            接收的请求正在处理 2xx        成功型状态码            请求正常处理完毕 3xx        重定向状态码">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/0069RVTdly1fu1fnhb9c5j30r309amz4.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/0069RVTdly1fu1frdrp8bj30uw08macf.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/0069RVTdly1fu1fyutckrj30gz0bg3zi.jpg">
-<meta property="og:updated_time" content="2018-12-22T09:37:33.311Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fyfnsib4cxj30tm0kiq55.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fyfnvebmrgj30sm0jm42z.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fyfnt4ome0j30jm0esq4v.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/0069RVTdly1fu2a0pqyfxj30n00qywl6.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0069RVTdly1fu2a3fc7grj30lq0dgtc0.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/0069RVTdly1fu2jokd3k0j30oi04475c.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/0069RVTdly1fu2jnzvou4j30te0b2ads.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/0069RVTdly1fu2jpy6627j30u20figq9.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/0069RVTdly1fu2l004c8lj318s0xadrf.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0069RVTdly1fu2l6j62sqj30r00u24em.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/0069RVTdly1fu2ll7dd67j30f40e0jtt.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fyfnx9ob9lj30to0j6wii.jpg">
+<meta property="og:updated_time" content="2018-12-22T09:43:15.326Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浏览器缓存">
-<meta name="twitter:description" content="浏览器缓存浏览器的缓存问题，主要指的是http的缓存——即协议层。而h5新增的storage和数据库缓存，那是应用层缓存，并不被计入本篇的分析内容里面。下面我们正式开始来进行缓存的分析。 协议层的缓存，其实，可以被分成强制缓存和对比缓存 强制缓存 只有当缓存失效时，才会去服务器获取最新资源的方式，就是强制缓存。而在协议层的字段中，可以造成强制缓存的字段有两个Expires和Cache-Contro">
-<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/0069RVTdly1fu1fnhb9c5j30r309amz4.jpg">
+<meta name="twitter:title" content="HTTP">
+<meta name="twitter:description" content="HTTPxhr.status=200             statusText = ‘OK’         xhr.readyState = 4 返回结果的HTTP状态码：状态码告知从服务器返回的请求结果 1xx        信息型状态码            接收的请求正在处理 2xx        成功型状态码            请求正常处理完毕 3xx        重定向状态码">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fyfnsib4cxj30tm0kiq55.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/20/浏览器缓存 下午6.43.58/">
+  <link rel="canonical" href="http://yoursite.com/2018/12/22/HTTP/">
 
 
 
@@ -135,7 +144,7 @@
   };
 </script>
 
-  <title>浏览器缓存 | 自言自语</title>
+  <title>HTTP | 自言自语</title>
   
 
 
@@ -347,7 +356,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/20/浏览器缓存 下午6.43.58/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/22/HTTP/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lengty">
@@ -364,7 +373,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">浏览器缓存
+          <h1 class="post-title" itemprop="name headline">HTTP
 
               
             
@@ -390,24 +399,12 @@
                 
               
 
-              <time title="创建时间：2018-12-20 18:41:06" itemprop="dateCreated datePublished" datetime="2018-12-20T18:41:06+08:00">2018-12-20</time>
+              <time title="创建时间：2018-12-22 17:35:25 / 修改时间：17:43:15" itemprop="dateCreated datePublished" datetime="2018-12-22T17:35:25+08:00">2018-12-22</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-12-22 17:37:33" itemprop="dateModified" datetime="2018-12-22T17:37:33+08:00">2018-12-22</time>
               
             
           </span>
@@ -424,7 +421,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/性能优化/" itemprop="url" rel="index"><span itemprop="name">性能优化</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/HTTP/" itemprop="url" rel="index"><span itemprop="name">HTTP</span></a></span>
 
                 
                 
@@ -458,58 +455,127 @@
       
 
       
-        <h4 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h4><p>浏览器的缓存问题，主要指的是http的缓存——即协议层。而h5新增的storage和数据库缓存，那是应用层缓存，并不被计入本篇的分析内容里面。下面我们正式开始来进行缓存的分析。</p>
-<p>协议层的缓存，其实，可以被分成强制缓存和对比缓存</p>
-<h5 id="强制缓存"><a href="#强制缓存" class="headerlink" title="强制缓存"></a><strong>强制缓存</strong></h5><p><img src="https://ws3.sinaimg.cn/large/0069RVTdly1fu1fnhb9c5j30r309amz4.jpg" alt=""></p>
-<p>只有当缓存失效时，才会去服务器获取最新资源的方式，就是强制缓存。而在协议层的字段中，可以造成强制缓存的字段有两个Expires和Cache-Control。</p>
-<p>最早使用的是Expires字段，该字段表示缓存到期时间，即有效时间+当时服务器的时间，然后将这个时间设置在header中返回给服务器。因此，该时间是一个绝对时间，举例说明：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Expires: Thu, 10 Nov 2017 08:45:11 GMT</span><br></pre></td></tr></table></figure>
-<p>在响应消息头中，设置这个字段之后，就可以告诉浏览器，在未过期之前不需要再次请求。</p>
-<p>但是，这个字段设置时有<strong>缺点</strong>：由于是绝对时间，用户可能会将客户端本地的时间进行修改，而导致浏览器判断缓存失效，重新请求该资源，同时，还导致客户端与服务端的时间不一致，致使缓存失效。</p>
-<p>已知Expires的缺点之后，在HTTP/1.1中，增加了一个字段Cache-Control，该字段表示资源缓存的最大有效时间，在该时间内，客户端不需要向服务器发送请求</p>
-<p>这两者的区别就是前者是绝对时间，而后者是相对时间。我们不妨举个例子来说明一下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cache-Control: max-age=2592000</span><br></pre></td></tr></table></figure>
-<p>Cache-Control的字段可以带的值：</p>
-<ol>
-<li>max-age：即最大有效时间</li>
-<li>min-fresh：要求缓存服务器返回至少还未过指定时间的缓存资源</li>
-<li>no-cache：表示没有缓存，响应方即告诉浏览器该资源并没有设置缓存，客户端请求方则是强制向源服务器再次验证</li>
-<li>no-store：不缓存请求或响应的任何内容</li>
-<li>s-maxage：同max-age，只适用于多位用户使用的公共缓存服务器响应的最大Age</li>
-<li>public：多用户共享缓存，默认设置，表明其他用户也可利用缓存</li>
-<li>private：不能够多用户共享，HTTP认证之后，字段会自动转换成private。</li>
-</ol>
-<p>总结一下，自从http1.1开始，Expires逐渐被Cache-Control取代。Cache-Control是一个相对时间，即使客户端时间发生改变，相对时间也不会随之改变，这样可以保持服务器和客户端的时间一致性。而且Cache-Control的可配置性比较强大。</p>
-<h5 id="对比缓存"><a href="#对比缓存" class="headerlink" title="对比缓存"></a><strong>对比缓存</strong></h5><p><img src="https://ws2.sinaimg.cn/large/0069RVTdly1fu1frdrp8bj30uw08macf.jpg" alt=""></p>
-<p>对比缓存的过程是，先从缓存中获取对应的数据标识，然后向服务器发送请求，确认数据是否更新，如果更新，则返回新数据和新缓存；反之，则返回304状态码，告知客户端缓存未更新，可继续使用。</p>
-<p>对比缓存主要应用于一些时常需要动态更新的资源文件。协议里的字段是Last-Modified和If-Modified-Since。</p>
-<p>Last-Modified：服务器告知客户端，资源最后一次被修改的时间，例如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Last-Modified: Thu, 10 Nov 2015 08:45:11 GMT</span><br></pre></td></tr></table></figure>
-<p>If-Modified-Since：再次请求时，请求头中带有该字段，服务器会将If-Modified-Since的值与Last-Modified字段进行对比，如果相等，则表示未修改，响应304；反之，则表示修改了，响应200状态码，返回数据。</p>
-<p>这个字段可以和Cache-Control配合使用。</p>
-<p>但是他还是有一定缺陷的：</p>
-<ol>
-<li>如果资源更新的速度是秒以下单位，那么该缓存是不能被使用的，因为它的时间单位最低是秒。</li>
-<li>如果文件是通过服务器动态生成的，那么该方法的更新时间永远是生成的时间，尽管文件可能没有变化，所以起不到缓存的作用。</li>
-<li>修改时间变了，但实际上文件内容没变</li>
-</ol>
-<p>由于Last-modified还是存在缺陷的，尽管大多数情况下，会使用它，但当遇到我们上面所说的场景时，就需要用Etag完善了。</p>
-<p>Etag存储的是文件的特殊标识(一般都是hash生成的)，服务器存储着文件的Etag字段，可以在与每次客户端传送If-match的字段进行比较，如果相等，则表示未修改，响应304；反之，则表示已修改，响应200状态码，返回数据。</p>
-<p><img src="https://ws4.sinaimg.cn/large/0069RVTdly1fu1fyutckrj30gz0bg3zi.jpg" alt=""></p>
-<p>浏览器的行为会产生怎样的请求：</p>
-<ol>
-<li>刷新网页 =&gt; 如果缓存没有失效，浏览器会直接使用缓存；反之，则向服务器请求数据</li>
-<li>手动刷新（F5） =&gt; 浏览器会认为缓存失效，在请求服务器时加上Cache-Control: max-age=0字段，然后询问服务器数据是否更新。</li>
-<li>强制刷新（Ctrl + F5） =&gt; 浏览器会直接忽略缓存，在请求服务器时加上Cache-Control: no-cache字段，然后重新向服务器拉取文件。</li>
-</ol>
-<h5 id="分级缓存策略"><a href="#分级缓存策略" class="headerlink" title="分级缓存策略"></a>分级缓存策略</h5><p>200状态    from cache    由expires/cache-control控制    </p>
-<p>​        expires是绝对时间    cache-control相对时间优先级&gt;expires</p>
-<p>​        只要未失效，浏览器只访问自己的缓存，不向服务器发请求</p>
-<p>304        客户端服务端协商过程        由last-modified/Etag控制    Etag&gt;last-modified</p>
-<p>​        当上一层失效，或是用户点击F5、refresh，浏览器发送请求给服务端</p>
-<p>​        如果服务端没有变化，返回304给浏览器，从缓存中读取    </p>
-<p>200        上一层发现内容更新、当浏览器本地没有缓存或上一级失效时，或用户点击Ctrl+F5</p>
-<p>​        浏览器向服务端发送请求，从服务端获取数据        </p>
+        <h4 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h4><p>xhr.status=200             statusText = ‘OK’         xhr.readyState = 4</p>
+<p>返回结果的HTTP状态码：状态码告知从服务器返回的请求结果</p>
+<p>1xx        信息型状态码            接收的请求正在处理</p>
+<p>2xx        成功型状态码            请求正常处理完毕</p>
+<p>3xx        重定向状态码            需要进行附加操作以完成请求</p>
+<p>4xx        客户端错误状态码        服务器无法处理请求</p>
+<p>5xx        服务端错误状态码        服务器处理请求错误</p>
+<p>2xx        表明处理被正常请求成功</p>
+<p>200 OK    表示从客户端发来的请求在服务器端被正常处理</p>
+<p>204 No Content    请求处理成功，但没有资源可返回，浏览器显示的页面不发生更新</p>
+<p>206 Partial Content    客户端Content-Range指定范围请求，服务端成功执行了这部分GET请求</p>
+<p>3xx        表明浏览器需要执行某些特殊的处理以正确处理请求</p>
+<p>301    永久性重定向        表明请求的资源已被分配了新的URL</p>
+<p>302    临时性重定向        表示本次能使用新的URL访问</p>
+<p>303        表示由于请求对应的资源存在另一个URL，应使用GET方法定向获取请求资源</p>
+<p>304 Not Modified        表示客户端发送附带缓存条件请求时，服务端允许请求访问资源，但未满足条件的情况</p>
+<p>4xx        表明客户端是发生错误的原因</p>
+<p>400 Bad Request        请求报文中存在错误</p>
+<p>401 Unauthorized    表示发送的请求需要有通过HTTP认证的认证信息</p>
+<p>返回401响应必须包含一个适用于被请求资源的WWW-Authenticate首部用以质询用户信息。当浏览器初次接收401响应会弹出认证用的对话窗口</p>
+<p>403     表明了对请求资源的访问被服务器拒绝了</p>
+<p>404 Not Found    表明服务器上无法找到请求的资源</p>
+<p>5xx        表明服务器本身发生错误</p>
+<p>500        表明服务器端在执行请求时发生了错误</p>
+<p>503        表明服务器暂时处于超负载或停机维护，现在无法处理请求</p>
+<p>HTTP报文首部</p>
+<p>在响应中，HTTP报文由HTTP版本、状态码（数字和原因短语）、HTTP首部字段三部分构成。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fyfnsib4cxj30tm0kiq55.jpg" alt="image-20180808142207164"></p>
+<p>通用首部字段：请求、响应报文都有</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fyfnvebmrgj30sm0jm42z.jpg" alt="image-20181222174119692"></p>
+<p>connection：控制不再转发给代理的首部字段、管理持久连接</p>
+<p>Connection：Upgrade  通过代理服务器以后首部字段Upgrade被删除后再转发</p>
+<p>HTTP/1.1默认连接都是持久连接（之前版本不是），要在旧版本的HTTP协议上维持持续连接，需要指定首部字段Connection：Keep-Alive</p>
+<p>客户端会在持久连接上持续发送请求，当服务器端想明确断开连接时，指定Connection：close</p>
+<p>Via首部字段为了追踪客户端与服务器之间的请求和响应报文的传输路径。报文经过代理或网关时，会现在首部字段Via中附加该服务器的信息，然后再进行转发。Via还可避免请求回环的发生，所以必须在经过代理时添加该首部字段内容。</p>
+<p>实体首部字段：请求、响应报文都有</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fyfnt4ome0j30jm0esq4v.jpg" alt="image-20180808143138922"></p>
+<p>请求首部字段</p>
+<p><img src="https://ws4.sinaimg.cn/large/0069RVTdly1fu2a0pqyfxj30n00qywl6.jpg" alt="image-20180808142821746"></p>
+<p>If-Range字段值若是跟ETag值或更新的日期时间匹配一致，那么就作为范围请求处理，指定范围Range：bytes=5001-10000。若不一致，则忽略范围请求，返回全部资源。</p>
+<p>响应首部字段：</p>
+<p><img src="https://ws1.sinaimg.cn/large/0069RVTdly1fu2a3fc7grj30lq0dgtc0.jpg" alt="image-20180808143057961"></p>
+<p>为cookie服务的首部字段</p>
+<p><img src="https://ws4.sinaimg.cn/large/0069RVTdly1fu2jokd3k0j30oi04475c.jpg" alt="image-20180808200241409"></p>
+<p>Set-Cookie字段的属性</p>
+<p><img src="https://ws3.sinaimg.cn/large/0069RVTdly1fu2jnzvou4j30te0b2ads.jpg" alt="image-20180808200208550"></p>
+<p><img src="https://ws2.sinaimg.cn/large/0069RVTdly1fu2jpy6627j30u20figq9.jpg" alt="image-20180808200400838"></p>
+<h4 id="HTTPS-HTTP-加密-认证-完整性保护"><a href="#HTTPS-HTTP-加密-认证-完整性保护" class="headerlink" title="HTTPS=HTTP+ 加密 + 认证 + 完整性保护"></a>HTTPS=HTTP+ 加密 + 认证 + 完整性保护</h4><p>HTTP的不足：</p>
+<ul>
+<li>通信使用明文（不加密），内容可能会被窃听</li>
+<li>不验证通信方的身份，因此可能遭遇伪装</li>
+<li>无法证明报文的完整性，所以有可能已遭篡改</li>
+</ul>
+<p>1.通信使用明文可能会被窃听</p>
+<p>HTTP本身不具备加密的功能，所以也无法做到对通信整体进行加密，即HTTP报文使用明文方式发送。TCP/IP是可能被窃听的网络。</p>
+<p>加密处理防止被窃听</p>
+<p>通信的加密 一种方式就是将通信加密。HTTP 协议中没有加密机制，但可以通过和 SSL（Secure Socket Layer，安全套接层）或 TLS（Transport Layer Security，安全层传输协议）的组合使用， 加密 HTTP 的通信内容。</p>
+<p>用 SSL 建立安全通信线路之后，就可以在这条线路上进行 HTTP 通信了。与 SSL 组合使用的 HTTP 被称为 HTTPS（HTTP Secure，超文本传输安全协议）或 HTTP over SSL。</p>
+<p>还有一种将参与通信的内容本身加密的方式。由于 HTTP 协议中 没有加密机制，那么就对 HTTP 协议传输的内容本身加密。即把 HTTP 报文里所含的内容进行加密处理。在这种情况下，客户端需要对 HTTP 报文进行加密处理后再发送 请求。</p>
+<p>2.不验证通信方的身份就可能遭遇伪装</p>
+<p>任何人都可发起请求：在 HTTP 协议通信时，由于不存在确认通信方的处理步骤，任何 人都可以发起请求。另外，服务器只要接收到请求，不管对方是 谁都会返回一个响应（但也仅限于发送端的 IP 地址和端口号没 有被 Web 服务器设定限制访问的前提下）。</p>
+<p>查明对手的证书：虽然使用 HTTP 协议无法确定通信方，但如果使用 SSL 则可以。 SSL 不仅提供加密处理，而且还使用了一种被称为证书的手段， 可用于确定方。</p>
+<p>证书由值得信任的第三方机构颁发，用以证明服务器和客户端是 实际存在的。通过使用证书，以证明通信方就是意料中的服务器。这对使用者 个人来讲，也减少了个人信息泄露的危险性。</p>
+<p>3.无法证明报文完整性， 可能已遭篡改</p>
+<p>接收到的内容可能有误：由于 HTTP 协议无法证明通信的报文完整性，因此，在请求或响 应送出之后直到对方接收之前的这段时间内，即使请求或响应的 内容遭到篡改，也没有办法获悉。</p>
+<p>换句话说，没有任何办法确认，发出的请求 / 响应和接收到的请 求 / 响应是前后相同的。比如，从某个 Web 网站上下载内容，是无法确定客户端下载的 文件和服务器上存放的文件是否前后一致的。文件内容在传输途 中可能已经被篡改为其他的内容。即使内容真的已改变，作为接 收方的客户端也是觉察不到的。</p>
+<p>HTTP+ 加密 + 认证 + 完整性保护=HTTPS</p>
+<p><img src="https://ws4.sinaimg.cn/large/0069RVTdly1fu2l004c8lj318s0xadrf.jpg" alt="image-20180808204816243"></p>
+<p>HTTPS通信</p>
+<p><img src="https://ws1.sinaimg.cn/large/0069RVTdly1fu2l6j62sqj30r00u24em.jpg" alt="image-20180808205411042"></p>
+<p>步骤 1： 客户端通过发送 Client Hello 报文开始 SSL 通信。报文中包 含客户端支持的 SSL 的指定版本、加密组件（Cipher Suite）列表（所 使用的加密算法及密钥长度等）。</p>
+<p>步骤 2： 服务器可进行 SSL 通信时，会以 Server Hello 报文作为应答。和客户端一样，在报文中包含 SSL 版本以及加密组件。服务器的 加密组件内容是从接收到的客户端加密组件内筛选出来的。</p>
+<p>步骤 3： 之后服务器发送 Certificate 报文。报文中包含公开密钥证 书。</p>
+<p>步骤 4： 最后服务器发送 Server Hello Done 报文通知客户端，最初阶 段的 SSL 握手协商部分结束。</p>
+<p>步骤 5： SSL 第一次握手结束之后，客户端以 Client Key Exchange 报 文作为回应。报文中包含通信加密中使用的一种被称为 Pre-master secret 的随机密码串。该报文已用步骤 3 中的公开密钥进行加密。</p>
+<p>步骤 6： 接着客户端继续发送 Change Cipher Spec 报文。该报文会提 示服务器，在此报文之后的通信会采用 Pre-master secret 密钥加密。</p>
+<p>步骤 7： 客户端发送 Finished 报文。该报文包含连接至今全部报文的 整体校验值。这次握手协商是否能够成功，要以服务器是否能够正确 解密该报文作为判定标准。</p>
+<p>步骤 8： 服务器同样发送 Change Cipher Spec 报文。</p>
+<p>步骤 9： 服务器同样发送 Finished 报文。</p>
+<p>步骤 10： 服务器和客户端的 Finished 报文交换完毕之后，SSL 连接 就算建立完成。当然，通信会受到 SSL 的保护。从此处开始进行应用 层协议的通信，即发送 HTTP 请求。</p>
+<p>步骤 11： 应用层协议通信，即发送 HTTP 响应。</p>
+<p>步骤 12： 最后由客户端断开连接。断开连接时，发送 close_notify 报 文。上图做了一些省略，这步之后再发送 TCP FIN 报文来关闭与 TCP 的通信。</p>
+<p>在以上流程中，应用层发送数据时会附加一种叫做 MAC（Message Authentication Code）的报文摘要。MAC 能够查知报文是否遭到篡 改，从而保护报文的完整性。</p>
+<h4 id="HTTP性能瓶颈"><a href="#HTTP性能瓶颈" class="headerlink" title="HTTP性能瓶颈"></a>HTTP性能瓶颈</h4><p>1.消除 HTTP 瓶颈的 SPDY：旨在解决 HTTP 的性能瓶颈，缩短 Web 页面的加载时间 （50%）</p>
+<p>HTTP 标准的瓶颈。</p>
+<ul>
+<li>一条连接上只可发送一个请求。</li>
+<li>请求只能从客户端开始。 客户端不可以接收除响应以外的指 令。</li>
+<li>请求 / 响应首部未经压缩就发送。 首部信息越多延迟越大。</li>
+<li>发送冗长的首部。 每次互相发送相同的首部造成的浪费较 多。</li>
+<li>可任意选择数据压缩格式。 非强制压缩发送。</li>
+</ul>
+<p>Ajax 的解决方法</p>
+<p>从已 加载完毕的 Web 页面上发起请求，以达到局部 Web 页面替换加载的异步通信手 段。和以前的同步通信相比，由于它只更新一部分页面，响应中传输 的数据量会因此而减少。而利用 Ajax 实时地从服务器获取内容，有可能会导致大量请求产 生。另外，Ajax 仍未解决 HTTP 协议本身存在的问题。</p>
+<p>SPDY 的设计与功能</p>
+<p>SPDY 没有完全改写 HTTP 协议，而是在 TCP/IP 的应用层与运输层之 间通过新加会话层的形式运作。同时，考虑到安全性问题，SPDY 规 定通信中使用 SSL。</p>
+<p>SPDY 以会话层的形式加入，控制对数据的流动，但还是采用 HTTP 建立通信连接。因此，可照常使用 HTTP 的 GET 和 POST 等方 法、 Cookie 以及 HTTP 报文等。</p>
+<p><img src="https://ws2.sinaimg.cn/large/0069RVTdly1fu2ll7dd67j30f40e0jtt.jpg" alt="image-20180808210838354"></p>
+<p>使用 SPDY 后，HTTP 协议额外获得以下功能。 </p>
+<ul>
+<li>多路复用流：通过单一的 TCP 连接，可以无限制处理多个 HTTP 请求。所有请求 的处理都在一条 TCP 连接上完成，因此 TCP 的处理效率得到提高。</li>
+<li>赋予请求优先级：SPDY 不仅可以无限制地并发处理请求，还可以给请求逐个分配优先 级顺序。这样主要是为了在发送多个请求时，解决因带宽低而导致响 应变慢的问题。 </li>
+<li>压缩 HTTP 首部：压缩请求和响应的首部。这样一来，通信产生的数据包数量和发送的字节数就更少了。 </li>
+<li>推送功能：支持服务器主动向客户端推送数据的功能。服务器可直接发送数据而不必等待客户端的请求。 </li>
+<li>服务器提示功能：服务器可以主动提示客户端请求所需的资源。由于在客户端发现资源 之前就可以获知资源的存在，因此在资源已缓存等情况下，可以避免发送不必要的请求。</li>
+</ul>
+<p>2.使用浏览器进行全双工通信的 WebSocket</p>
+<p>为了解决 Ajax 和 Comet 里 XMLHttpRequest 附带的缺陷所引起的问题。</p>
+<p>一旦 Web 服务器与客户端之间建立起 WebSocket 协议的通信连接， 之后所有的通信都依靠这个专用协议进行。通信过程中可互相发送 JSON、XML、HTML 或图片等任意格式的数据。</p>
+<p>由于是建立在 HTTP 基础上的协议，因此连接的发起方仍是客户端， 而一旦确立 WebSocket 通信连接，不论服务器还是客户端，任意一方 都可直接向对方发送报文。</p>
+<p>WebSocket 协议的主要特点。</p>
+<p>推送功能：支持由服务器向客户端推送数据的推送功能。这样服务器可直接发送数据，而不必等待客户端的请求。</p>
+<p>减少通信量：只要建立起 WebSocket 连接，就希望一直保持连接状态。和 HTTP 相 比，不但每次连接时的总开销减少，而且由于 WebSocket 的首部信息很小，通信量也相应减少了。</p>
+<p>为了实现 WebSocket 通信，在 HTTP 连接建立之后，需要完成一 次“握手”（Handshaking）的步骤。</p>
+<p>握手·请求：为了实现 WebSocket 通信，需要用到 HTTP 的 Upgrade 首部字 段，告知服务器通信协议发生改变，以达到握手的目的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">GET /chat HTTP/1.1 </span><br><span class="line">Host: server.example.com </span><br><span class="line">Upgrade: websocket </span><br><span class="line">Connection: Upgrade </span><br><span class="line">Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ== Origin: http://example.com Sec-WebSocket-Protocol: chat, superchat Sec-WebSocket-Version: 13</span><br></pre></td></tr></table></figure>
+<p>Sec-WebSocket-Key 字段内记录着握手过程中必不可少的键值。 Sec-WebSocket-Protocol 字段内记录使用的子协议。 子协议按 WebSocket 协议标准在连接分开使用时，定义那些连接 的名称。</p>
+<p>握手·响应：对于之前的请求，返回状态码 101 Switching Protocols 的响应。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 101 Switching Protocols </span><br><span class="line">Upgrade: websocket </span><br><span class="line">Connection: Upgrade </span><br><span class="line">Sec-WebSocket-Accept: s3pPLMBiTxaQ9kYGzzhZRbK+xOo= </span><br><span class="line">Sec-WebSocket-Protocol: chat</span><br></pre></td></tr></table></figure>
+<p>Sec-WebSocket-Accept 的字段值是由握手请求中的 SecWebSocket-Key 的字段值生成的。 成功握手确立 WebSocket 连接之后，通信时不再使用 HTTP 的数 据帧，而采用 WebSocket 独立的数据帧。</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fyfnx9ob9lj30to0j6wii.jpg" alt="image-20180808211405399"></p>
 
       
     </div>
@@ -540,8 +606,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/20/同源策略和跨域 下午6.44.44/" rel="next" title="同源策略和跨域">
-                <i class="fa fa-chevron-left"></i> 同源策略和跨域
+              <a href="/2018/12/22/CSS与HTML动画/" rel="next" title="CSS、HTML、JS动画">
+                <i class="fa fa-chevron-left"></i> CSS、HTML、JS动画
               </a>
             
           </div>
@@ -550,8 +616,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/12/20/CSS面试整理/" rel="prev" title="CSS面试整理">
-                CSS面试整理 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/12/22/获取节点样式、尺寸/" rel="prev" title="获取节点样式、尺寸">
+                获取节点样式、尺寸 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -701,7 +767,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器缓存"><span class="nav-number">1.</span> <span class="nav-text">浏览器缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#强制缓存"><span class="nav-number">1.1.</span> <span class="nav-text">强制缓存</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对比缓存"><span class="nav-number">1.2.</span> <span class="nav-text">对比缓存</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#分级缓存策略"><span class="nav-number">1.3.</span> <span class="nav-text">分级缓存策略</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP"><span class="nav-number">1.</span> <span class="nav-text">HTTP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTPS-HTTP-加密-认证-完整性保护"><span class="nav-number">2.</span> <span class="nav-text">HTTPS=HTTP+ 加密 + 认证 + 完整性保护</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP性能瓶颈"><span class="nav-number">3.</span> <span class="nav-text">HTTP性能瓶颈</span></a></li></ol></div>
             
 
           </div>

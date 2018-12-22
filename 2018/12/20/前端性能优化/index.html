@@ -111,7 +111,7 @@
 <meta property="og:site_name" content="自言自语">
 <meta property="og:description" content="1.从浏览器发起请求到页面能正常浏览都有哪些阶段预处理——&amp;gt;DNS解析——&amp;gt;建立连接——&amp;gt;发起请求——&amp;gt;等待响应——&amp;gt;接受数据——&amp;gt;处理元素——&amp;gt;布局渲染 1.应用层DNS域名解析 浏览器解析URL解析出主机名 浏览器将主机名转换成服务器ip地址（浏览器先查找本地DNS缓存列表，没有的话再向浏览器默认的DNS服务器发送查询请求并且同时缓存，请求上级DNS服">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-22T09:04:37.946Z">
+<meta property="og:updated_time" content="2018-12-22T09:44:52.221Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端性能优化">
 <meta name="twitter:description" content="1.从浏览器发起请求到页面能正常浏览都有哪些阶段预处理——&amp;gt;DNS解析——&amp;gt;建立连接——&amp;gt;发起请求——&amp;gt;等待响应——&amp;gt;接受数据——&amp;gt;处理元素——&amp;gt;布局渲染 1.应用层DNS域名解析 浏览器解析URL解析出主机名 浏览器将主机名转换成服务器ip地址（浏览器先查找本地DNS缓存列表，没有的话再向浏览器默认的DNS服务器发送查询请求并且同时缓存，请求上级DNS服">
@@ -403,7 +403,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-12-22 17:04:37" itemprop="dateModified" datetime="2018-12-22T17:04:37+08:00">2018-12-22</time>
+                <time title="修改时间：2018-12-22 17:44:52" itemprop="dateModified" datetime="2018-12-22T17:44:52+08:00">2018-12-22</time>
               
             
           </span>
@@ -493,6 +493,18 @@
 <p>从服务商角度而言，优化能够减少页面请求数、或者减小请求所占带宽，能够节省可观的资源。</p>
 <p>第一类是页面级别的优化，例如 HTTP请求数、脚本的无阻塞加载、内联脚本的位置优化等 ;</p>
 <p>第二类则是代码级别的优化，例如 Javascript中的DOM 操作优化、CSS选择符优化、图片优化以及 HTML结构优化等等。</p>
+<p><strong>重排和重绘</strong></p>
+<p>部分渲染树（或者整个渲染树）需要重新分析并且节点尺寸需要重新计算。这被称为重排。注意这里至少会有一次重排-初始化页面布局。</p>
+<p>由于节点的几何属性发生改变或者由于样式发生改变，例如改变元素背景色时，屏幕上的部分内容需要更新。这样的更新被称为重绘。</p>
+<p><strong>什么情况会触发重排和重绘？</strong></p>
+<ul>
+<li>添加、删除、更新 DOM 节点</li>
+<li>通过 display:      none 隐藏一个DOM节点-触发重排和重绘</li>
+<li>通过 visibility:      hidden 隐藏一个DOM节点-只触发重绘，因为没有几何变化</li>
+<li>移动或者给页面中的 DOM 节点添加动画</li>
+<li>添加一个样式表，调整样式属性</li>
+<li>用户行为，例如调整窗口大小，改变字号，或者滚动。</li>
+</ul>
 <h5 id="页面级别的优化："><a href="#页面级别的优化：" class="headerlink" title="页面级别的优化："></a>页面级别的优化：</h5><h6 id="1-减少Http请求-最基本有效的方式"><a href="#1-减少Http请求-最基本有效的方式" class="headerlink" title="1.减少Http请求        最基本有效的方式"></a>1.减少Http请求        最基本有效的方式</h6><p>​    一个完整的请求都需要经过 DNS寻址、与服务器建立连接、发送数据、等待服务器响应、接收数据这样一个 “漫长” 而复杂的过程。</p>
 <p>时间成本就是用户需要看到或者 “感受” 到这个资源是必须要等待这个过程结束的，资源上由于每个请求都需要携带数据，因此每个请求都需要占用带宽。</p>
 <p>另外，由于浏览器进行并发请求的请求数是有上限的 ，因此请求数多了以后，浏览器需要分批进行请求，因此会增加用户的等待时间，会给用户造成站点速度慢这样一个印象。</p>
@@ -678,7 +690,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -703,7 +715,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
