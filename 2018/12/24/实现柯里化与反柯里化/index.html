@@ -104,20 +104,24 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="自言自语">
-<meta property="og:url" content="http://yoursite.com/archives/2018/12/page/2/index.html">
+  <meta name="description" content="柯里化，把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数。行为规范：​    逐步接收参数，并缓存供后期计算使用​    不立即计算，延后执行  返回一个函数闭包，对外层函数参数的引用​    符合计算的条件，将缓存的参数，统一传递给执行方法 1234567891011121314151617181920212223242526function currying(fn) &amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实现柯里化与反柯里化">
+<meta property="og:url" content="http://yoursite.com/2018/12/24/实现柯里化与反柯里化/index.html">
 <meta property="og:site_name" content="自言自语">
+<meta property="og:description" content="柯里化，把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数。行为规范：​    逐步接收参数，并缓存供后期计算使用​    不立即计算，延后执行  返回一个函数闭包，对外层函数参数的引用​    符合计算的条件，将缓存的参数，统一传递给执行方法 1234567891011121314151617181920212223242526function currying(fn) &amp;">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-24T01:34:32.505Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="自言自语">
+<meta name="twitter:title" content="实现柯里化与反柯里化">
+<meta name="twitter:description" content="柯里化，把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数。行为规范：​    逐步接收参数，并缓存供后期计算使用​    不立即计算，延后执行  返回一个函数闭包，对外层函数参数的引用​    符合计算的条件，将缓存的参数，统一传递给执行方法 1234567891011121314151617181920212223242526function currying(fn) &amp;">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/12/page/2/">
+  <link rel="canonical" href="http://yoursite.com/2018/12/24/实现柯里化与反柯里化/">
 
 
 
@@ -127,7 +131,7 @@
   };
 </script>
 
-  <title>归档 | 自言自语</title>
+  <title>实现柯里化与反柯里化 | 自言自语</title>
   
 
 
@@ -175,7 +179,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -300,134 +304,213 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+    
+  
+  
+
+  
+
+  <article class="post post-type-normal true" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/24/实现柯里化与反柯里化/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lengty">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="自言自语">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">实现柯里化与反柯里化
+
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-24 09:13:19 / 修改时间：09:34:32" itemprop="dateCreated datePublished" datetime="2018-12-24T09:13:19+08:00">2018-12-24</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 12 篇日志。 继续努力。
-      </span>
-      
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a></span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/24/实现柯里化与反柯里化/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/12/24/实现柯里化与反柯里化/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/20/前端性能优化/" itemprop="url">
-              
-                <span itemprop="name">前端性能优化</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-12-20T14:55:11+08:00" content="2018-12-20">
-          12-20
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/20/正则/" itemprop="url">
-              
-                <span itemprop="name">正则表达式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-12-20T14:50:20+08:00" content="2018-12-20">
-          12-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <p>柯里化，把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数。<br>行为规范：<br>​    逐步接收参数，并缓存供后期计算使用<br>​    不立即计算，延后执行  返回一个函数闭包，对外层函数参数的引用<br>​    符合计算的条件，将缓存的参数，统一传递给执行方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">currying</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> allArgs = [];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">next</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> args = [].slice.call(<span class="built_in">arguments</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (args.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">      allArgs = allArgs.concat(args);</span><br><span class="line">      <span class="keyword">return</span> next;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> fn.apply(<span class="literal">null</span>, allArgs);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="built_in">arguments</span>.length; i++) &#123;</span><br><span class="line">    sum += <span class="built_in">arguments</span>[i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> add = currying(sum);</span><br><span class="line"><span class="built_in">console</span>.log(add(<span class="number">1</span>)(<span class="number">2</span>)(<span class="number">3</span>)(<span class="number">4</span>)(<span class="number">5</span>)(<span class="number">6</span>)(<span class="number">7</span>)(<span class="number">8</span>)());	<span class="comment">//36</span></span><br><span class="line"><span class="built_in">console</span>.log(sum(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>));	<span class="comment">//36</span></span><br></pre></td></tr></table></figure>
+<p>当执行var add = currying(…)时，add变量已经指向了next方法。此时，allArgs在next方法内部有引用到，所以不能被GC回收。也就是说，allArgs在该赋值语句执行后，一直存在，形成了闭包。依靠这个特性，只要把接收的参数，不断放入allArgs变量进行存储即可。所以，当arguments.length &gt; 0时，就可以将接收的新参数，放到allArgs中。最后返回next函数指针，形成链式调用。</p>
+<p>如果要实现 f(1)(2)(3)(4)(5)(6)(7)(8) == sum(1,2,3,4,5,6,7,8)</p>
+<p>实现 add(1)(2, 3)(4)(5) = 15 的效果。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">currying2</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> allArgs = [];</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">next</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// var args = [].slice.call(arguments);</span></span><br><span class="line">    <span class="comment">// allArgs = allArgs.concat(args);</span></span><br><span class="line">    allArgs = allArgs.concat([...arguments]);</span><br><span class="line">    <span class="keyword">return</span> next;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="comment">//js在获取当前变量值的时候，会根据语境，隐式调用valueOf和toString方法进行获取需要的值。</span></span><br><span class="line">  <span class="comment">// 字符类型</span></span><br><span class="line">  next.toString = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> fn.apply(<span class="literal">null</span>, allArgs);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">// 数值类型</span></span><br><span class="line">  next.valueOf = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> fn.apply(<span class="literal">null</span>, allArgs);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> next;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> f = currying2(sum);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(f(<span class="number">1</span>)(<span class="number">2</span>)(<span class="number">3</span>)(<span class="number">4</span>)(<span class="number">5</span>)(<span class="number">6</span>)(<span class="number">7</span>)(<span class="number">8</span>)(<span class="number">9</span>)));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(f(<span class="number">1</span>)));  <span class="comment">//1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(f(<span class="number">2</span>)));  <span class="comment">//2</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(f(<span class="number">3</span>)));  <span class="comment">//3</span></span><br></pre></td></tr></table></figure>
+<p>直接实现</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> result = a;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">next</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// var args = [].slice.call(arguments);</span></span><br><span class="line">    <span class="comment">// args.forEach(value =&gt; result += parseInt(value));</span></span><br><span class="line">    result += <span class="built_in">arguments</span>[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">return</span> next;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  next.valueOf = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> next;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(f(<span class="number">1</span>)(<span class="number">2</span>)(<span class="number">3</span>)(<span class="number">4</span>)(<span class="number">5</span>)(<span class="number">6</span>)(<span class="number">7</span>)(<span class="number">8</span>)));</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"%d"</span>, f(<span class="number">1</span>)(<span class="number">2</span>)(<span class="number">3</span>)(<span class="number">4</span>)(<span class="number">5</span>)(<span class="number">6</span>)(<span class="number">7</span>)(<span class="number">8</span>));</span><br><span class="line"><span class="comment">// console.log格式化打印</span></span><br><span class="line"><span class="comment">// %c表示css样式</span></span><br><span class="line"><span class="comment">// %d表示数字</span></span><br><span class="line"><span class="comment">// %i表示整型数字</span></span><br><span class="line"><span class="comment">// %o表示DOM元素</span></span><br><span class="line"><span class="comment">// %O表示javascript对象</span></span><br></pre></td></tr></table></figure>
+<p>反柯里化</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> uncurrying = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> _this = <span class="keyword">this</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> _this.apply(<span class="built_in">arguments</span>[<span class="number">0</span>], [].slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>));</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/22/CSS与HTML动画/" rel="next" title="CSS、HTML、JS动画">
+                <i class="fa fa-chevron-left"></i> CSS、HTML、JS动画
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2018/12/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/archives/2018/12/">1</a><span class="page-number current">2</span>
-  </nav>
+  </article>
 
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
 
         </div>
         
@@ -665,6 +748,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
+
+
 
   
 
