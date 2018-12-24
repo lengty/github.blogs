@@ -104,17 +104,17 @@
 
 
 
-  <meta name="description" content="封装事件处理程序，达到浏览器兼容 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748const eventUtils = &amp;#123;  //添加句柄：事件处理程序  addHandler: function(ele, type, handler) &amp;#123;    if">
+  <meta name="description" content="封装事件处理程序，达到浏览器兼容123456789101112131415161718192021222324252627282930313233343536373839404142434445464748const eventUtils = &amp;#123;  //添加句柄：事件处理程序  addHandler: function(ele, type, handler) &amp;#123;    if (">
 <meta property="og:type" content="article">
 <meta property="og:title" content="封装事件处理程序">
 <meta property="og:url" content="http://yoursite.com/2018/12/24/封装事件处理程序/index.html">
 <meta property="og:site_name" content="自言自语">
-<meta property="og:description" content="封装事件处理程序，达到浏览器兼容 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748const eventUtils = &amp;#123;  //添加句柄：事件处理程序  addHandler: function(ele, type, handler) &amp;#123;    if">
+<meta property="og:description" content="封装事件处理程序，达到浏览器兼容123456789101112131415161718192021222324252627282930313233343536373839404142434445464748const eventUtils = &amp;#123;  //添加句柄：事件处理程序  addHandler: function(ele, type, handler) &amp;#123;    if (">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-24T02:19:06.475Z">
+<meta property="og:updated_time" content="2018-12-24T02:26:26.627Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="封装事件处理程序">
-<meta name="twitter:description" content="封装事件处理程序，达到浏览器兼容 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748const eventUtils = &amp;#123;  //添加句柄：事件处理程序  addHandler: function(ele, type, handler) &amp;#123;    if">
+<meta name="twitter:description" content="封装事件处理程序，达到浏览器兼容123456789101112131415161718192021222324252627282930313233343536373839404142434445464748const eventUtils = &amp;#123;  //添加句柄：事件处理程序  addHandler: function(ele, type, handler) &amp;#123;    if (">
 
 
 
@@ -369,7 +369,7 @@
                 
               
 
-              <time title="创建时间：2018-12-24 10:18:12 / 修改时间：10:19:06" itemprop="dateCreated datePublished" datetime="2018-12-24T10:18:12+08:00">2018-12-24</time>
+              <time title="创建时间：2018-12-24 10:18:12 / 修改时间：10:26:26" itemprop="dateCreated datePublished" datetime="2018-12-24T10:18:12+08:00">2018-12-24</time>
             
 
             
@@ -435,8 +435,7 @@
       
 
       
-        <p>封装事件处理程序，达到浏览器兼容</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> eventUtils = &#123;</span><br><span class="line">  <span class="comment">//添加句柄：事件处理程序</span></span><br><span class="line">  addHandler: <span class="function"><span class="keyword">function</span>(<span class="params">ele, type, handler</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (ele.addEventListener) &#123;</span><br><span class="line">      ele.addEventListener(type, handler, <span class="literal">false</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (ele.attachEvent) &#123;</span><br><span class="line">      ele.attachEvent(<span class="string">"on"</span> + type, handler);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      ele[<span class="string">"on"</span> + type] = handler;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//删除句柄：事件处理程序</span></span><br><span class="line">  removeHandler: <span class="function"><span class="keyword">function</span>(<span class="params">ele, type, handler</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (ele.removeEventListener) &#123;</span><br><span class="line">      ele.removeEventListener(type, handler, <span class="literal">false</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (ele.detachEvent) &#123;</span><br><span class="line">      ele.detachEvent(<span class="string">"on"</span> + type, handler);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      ele[<span class="string">"on"</span> + type] = <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//获取事件对象,IE模型中event是一个全局唯一的对象绑定在window对象上</span></span><br><span class="line">  getEvent: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> event ? event : <span class="built_in">window</span>.event;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//获取触发事件对象</span></span><br><span class="line">  getElement: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> event.target || event.srcElement;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//组织事件冒泡</span></span><br><span class="line">  stopPropagation: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (event.stopPropagation) &#123;</span><br><span class="line">      event.stopPropagation();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      event.cancelBubble = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//取消事件默认行为</span></span><br><span class="line">  preventDefault: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (event.preventDefault) &#123;</span><br><span class="line">      event.preventDefault();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (event.returnValue) &#123;</span><br><span class="line">      event.returnValue = <span class="literal">false</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        <h5 id="封装事件处理程序，达到浏览器兼容"><a href="#封装事件处理程序，达到浏览器兼容" class="headerlink" title="封装事件处理程序，达到浏览器兼容"></a>封装事件处理程序，达到浏览器兼容</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">const eventUtils = &#123;</span><br><span class="line">  //添加句柄：事件处理程序</span><br><span class="line">  addHandler: function(ele, type, handler) &#123;</span><br><span class="line">    if (ele.addEventListener) &#123;</span><br><span class="line">      ele.addEventListener(type, handler, false);</span><br><span class="line">    &#125; else if (ele.attachEvent) &#123;</span><br><span class="line">      ele.attachEvent(&quot;on&quot; + type, handler);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      ele[&quot;on&quot; + type] = handler;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  //删除句柄：事件处理程序</span><br><span class="line">  removeHandler: function(ele, type, handler) &#123;</span><br><span class="line">    if (ele.removeEventListener) &#123;</span><br><span class="line">      ele.removeEventListener(type, handler, false);</span><br><span class="line">    &#125; else if (ele.detachEvent) &#123;</span><br><span class="line">      ele.detachEvent(&quot;on&quot; + type, handler);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      ele[&quot;on&quot; + type] = null;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  //获取事件对象,IE模型中event是一个全局唯一的对象绑定在window对象上</span><br><span class="line">  getEvent: function(event) &#123;</span><br><span class="line">    return event ? event : window.event;</span><br><span class="line">  &#125;,</span><br><span class="line">  //获取触发事件对象</span><br><span class="line">  getElement: function(event) &#123;</span><br><span class="line">    return event.target || event.srcElement;</span><br><span class="line">  &#125;,</span><br><span class="line">  //组织事件冒泡</span><br><span class="line">  stopPropagation: function(event) &#123;</span><br><span class="line">    if (event.stopPropagation) &#123;</span><br><span class="line">      event.stopPropagation();</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      event.cancelBubble = true;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  //取消事件默认行为</span><br><span class="line">  preventDefault: function(event) &#123;</span><br><span class="line">    if (event.preventDefault) &#123;</span><br><span class="line">      event.preventDefault();</span><br><span class="line">    &#125; else if (event.returnValue) &#123;</span><br><span class="line">      event.returnValue = false;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      return false;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -524,8 +523,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -611,6 +619,22 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#封装事件处理程序，达到浏览器兼容"><span class="nav-number">1.</span> <span class="nav-text">封装事件处理程序，达到浏览器兼容</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
